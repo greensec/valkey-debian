@@ -45,7 +45,7 @@ if [ -z $remote_current_release ]; then
     echo "own_current_release empty!"
 fi
 
-repo_url="https://greensec.github.io/${GITHUB_REPOSITORY}/repo"
+repo_url="https://${GITHUB_REPOSITORY_OWNER}.github.io/${GITHUB_REPOSITORY##*/}/repo"
 own_current_release=$(curl -sL "$repo_url/dists/bookworm/main/binary-amd64/Packages" | \
     grep -A 3 '^Package: valkey-server$' | \
     grep '^Version:' | \
