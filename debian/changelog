@@ -1,18 +1,5 @@
 valkey (8.1.1+dfsg1-3) unstable; urgency=medium
 
-  * Fix CVE-2025-32023 (Closes: #1108978)
-    An authenticated user may use a specially crafted string to trigger a
-    stack/heap out of bounds write on hyperloglog operations, potentially
-    leading to remote code execution. The bug likely affects all Valkey
-    versions with hyperloglog operations implemented.
-    An additional workaround to mitigate the problem without patching the
-    valkey-server executable is to prevent users from executing hyperloglog
-    operations. This can be done using ACL to restrict HLL commands.
-    - d/p/CVE-2025-32023.patch
-  * Fix CVE-2025-48367 (Closes: #1108982)
-    An unauthenticated connection can cause repeated IP protocol errors,
-    leading to client starvation and, ultimately, a denial of service.
-    - d/p/CVE-2025-48367.patch
   * d/copyright: fix path of the lua files, thanks to lintian!
 
  -- Lucas Kanashiro <kanashiro@debian.org>  Wed, 09 Jul 2025 05:53:22 -0300
