@@ -48,3 +48,10 @@ override_dh_compress:
 
 override_dh_installchangelogs:
 	dh_installchangelogs --keep 00-RELEASENOTES
+
+override_dh_shlibdeps:
+	if [ "$(DEB_HOST_ARCH)" = "arm64" ]; then \
+	  dh_shlibdeps -- -l/usr/lib/aarch64-linux-gnu; \
+	else \
+	  dh_shlibdeps; \
+	fi
