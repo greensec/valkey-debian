@@ -101,7 +101,7 @@ jobs:
       - name: Upload deb files
         uses: actions/upload-artifact@v4
         with:
-          name: "packages-${{ env.version }}-${{ matrix.arch }}"
+          name: "packages-${{ env.debian_release }}-${{ matrix.arch }}"
           path: ./debian/artifacts/*
 
   merge-artefacts:
