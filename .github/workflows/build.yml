@@ -95,7 +95,7 @@ jobs:
 
             cp -vr /github/workspace/build-debian/debian /github/workspace/
           extra-build-deps: "devscripts git dpkg-cross"
-          before-build-hook: "DEBEMAIL='GitHub Actions <github-actions@users.noreply.github.com>' dch --local ~${{ env.version }} 'GitHub build for ${{ matrix.os-version }}'"
+          before-build-hook: "DEBEMAIL='GitHub Actions <github-actions@users.noreply.github.com>' dch -v ~${{ env.version }} 'GitHub build for ${{ matrix.os-version }}'"
           buildpackage-opts: --build=binary --no-sign -d
       - name: Upload deb files
         uses: actions/upload-artifact@v4
