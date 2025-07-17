@@ -69,7 +69,7 @@ own_current_release=$(curl -sL "$repo_url/dists/${2}/main/binary-amd64/Packages"
     grep '^Version:' | \
     cut -d ' ' -f 2 | \
     head -n 1 | \
-    sed -e 's/-.*//' -e 's/\+.*//')
+    sed -e 's/-.*//' -e 's/\+.*//' -e 's/\~.*//')
 echo "Current package version in repository: ${own_current_release:-Not found}"
 
 echo "own_current_release=${own_current_release}" >> $GITHUB_OUTPUT
