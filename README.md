@@ -9,7 +9,6 @@ Pre-built packages are available at: [https://greensec.github.io/valkey-debian/]
 ## Supported Debian/Ubuntu Versions
 
 ### Debian
-- buster (10)
 - bullseye (11)
 - bookworm (12)
 
