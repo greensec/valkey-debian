@@ -1,0 +1,19 @@
+name: cron-check-upstream
+on:
+  schedule:
+    - cron: '0 16 * * *'
+  workflow_dispatch:
+
+jobs:
+  check_upstream:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - id: check
+      run: ./check_latest_version.sh 'valkey-io/valkey' "${{ github.repository }}"
+      shell: bash
+    - name: Commit report
+      if: steps.check.outputs.vercomp == 'newer'
+      run: |
+        gh workflow run .github/workflows/build.yml --ref ${{ steps.check.outputs.remote_current_release }} -i valkey_tag=${{ steps.check.outputs.remote_current_release }}
+

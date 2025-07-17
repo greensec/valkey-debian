@@ -5,11 +5,6 @@ permissions:
 
 # Controls when the workflow will run
 on:
-  # Triggers the workflow on push or pull request events but only for the master branch
-  create:
-    tags:
-      - "v*"
-
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
     inputs:
@@ -91,6 +86,11 @@ jobs:
               dpkg --add-architecture arm64
               apt-get update
               apt-get install libatomic1:arm64
+
+              if [ ! -f /usr/lib/aarch64-linux-gnu/libatomic.so.1 ]; then
+                echo "libatomic.so.1 (arm64) not found"
+                exit 1
+              fi
             fi
 
             cp -vr /github/workspace/build-debian/debian /github/workspace/
