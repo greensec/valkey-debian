@@ -2,44 +2,44 @@
 Hash: SHA512
 
 Codename: bullseye
-Date: Thu, 17 Jul 2025 16:58:01 UTC
+Date: Thu, 17 Jul 2025 21:29:22 UTC
 Architectures: amd64 arm64
 Components: main
 Description: greensec/valkey-debian
 MD5Sum:
- 3ad2a0f8f777721c530cbc913dd97fc8 2896 main/binary-amd64/Packages
- 184ab2983d6973d2a2ae7bccaa54c8b4 1006 main/binary-amd64/Packages.gz
+ 983492b3440dad78d0083f93beafc43a 2824 main/binary-amd64/Packages
+ 0a3dda62a121591c995e107c9dde1feb 998 main/binary-amd64/Packages.gz
  af3ebcf028b6035cd44ba6a22a192cfe 72 main/binary-amd64/Release
  d41d8cd98f00b204e9800998ecf8427e 0 main/binary-arm64/Packages
  7029066c27ac6f5ef18d660d5741979a 20 main/binary-arm64/Packages.gz
  f09eccc20e68b9e2d83d33a82fb1515f 72 main/binary-arm64/Release
 SHA1:
- b09e280914d5ac4c34c0e7317c2c1266bd549db0 2896 main/binary-amd64/Packages
- 689a4903af8f69a0b0a9273b439329dcc5862270 1006 main/binary-amd64/Packages.gz
+ 9017fcb589032c59c57137eaa03ba4b50adb51d4 2824 main/binary-amd64/Packages
+ cad2f1f5afa309e58fe8dbe87ed6e7093cdc7c45 998 main/binary-amd64/Packages.gz
  1fc3a99e1488fcf968cde4c73befbfcadab39a2e 72 main/binary-amd64/Release
  da39a3ee5e6b4b0d3255bfef95601890afd80709 0 main/binary-arm64/Packages
  46c6643f07aa7f6bfe7118de926b86defc5087c4 20 main/binary-arm64/Packages.gz
  88798d0e39aa69b7e24a89471fb5d3306cd5b102 72 main/binary-arm64/Release
 SHA256:
- b6c5fc2cb17953245a10f3fcf40cde7052559901d109a1c6cac2c96a754e423b 2896 main/binary-amd64/Packages
- 34cbc5bef4f4138fe9b3e9365e10b14331f8b93f1d70377a1d5c4277c5a045fc 1006 main/binary-amd64/Packages.gz
+ 3ad390734622007cd8c22f13e2263f2568cd1563d3feaf6957925144c804a931 2824 main/binary-amd64/Packages
+ 67930be196481eef444f8496ca4e64a125e7e274ca6d46ef1914cefb97f11958 998 main/binary-amd64/Packages.gz
  411c06bae38c967a3699cf6e9d95619e2e528f8f1c71d001944abf7013c3a179 72 main/binary-amd64/Release
  e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 0 main/binary-arm64/Packages
  59869db34853933b239f1e2219cf7d431da006aa919635478511fabbfc8849d2 20 main/binary-arm64/Packages.gz
  1f38aeb335f7350323911aab026b0ed9d9d295cd0c42b2be7401fe93d88ba7aa 72 main/binary-arm64/Release
 -----BEGIN PGP SIGNATURE-----
 
-iQIzBAEBCgAdFiEEga/Afm0npMGA3feNyyUWHVEdjYQFAmh5K5kACgkQyyUWHVEd
-jYRtUA//UKoStic4fCsgWXM0X1pHzFAewhqRvmdAKUHF2WDFlHuDHzhRShH2pC8a
-Ke8QcxI0y/AA/d1HMDfwo8dJ1ehQKx7HxJWUkswMM2udgwg0VWaVY9RdBlWpjhI1
-FiYLy0ncT9oO58ci+HlJ5zQebNmlbuta3QNH9edxKusmn5wu0q3k/KbbkwJU0ME3
-ki+GO+9IZve35DTUiKhuVR8vFHZEvsnEH9cso9bf7BwZN/6H60OikW0Q8rKdqliO
-BSK1EmNle7d+nknVx6DJdU6gFl8sUTy8MzCd93NhWRdVK/v0VFIpWIvYBta75VGa
-OTB7dIPy+FU5oGpORQhPclkjeW8E0NCMJBauAspo2EI7FznHStBllqh57zswJq7D
-vHxu7eY5y8vsbblL+moF5MAMXLQitJa8GuMcJlqBjHSKamPJcFFzmDBgrB348O8I
-4OTOyPKYtHChFVJuGR1/KTiMiCT7TCc9LvY6u7tLQiefE8cHJhmOphk4pg9YGp1I
-n3w8AbUqaO3bjep0BnKCzhVZ8Ks1fBNRLznuekAHFsu9XFm5RwxuS9GU6JCF8Kh2
-w5kKI2YCT9J3NJ5G2AKLeNmSCIWVc2kNIEjY8tEvb3ufZAj/6rVUA1N5N25l7vD6
-stu7UaFi3l6b2OM3I75mxXcNErQui/kG3+auc08MNChz/2qYyQo=
-=qp1l
+iQIzBAEBCgAdFiEEga/Afm0npMGA3feNyyUWHVEdjYQFAmh5azIACgkQyyUWHVEd
+jYSKIg/9GL+v4tI9es1s5+4Melpa23CYr2Omnfsvf0Z+gw7Lh/L1fB8ycXO+3Eww
+yyR23Zo/ODSdhbyDDTJAn4KQvA+HRPudwrIexwo5pxReNkJxcAWLKkpcwzHyBsrT
+J0D6OtJA4L0yfbs0NmOYJggTrstUCM+0AyEFU9CNoOPFwlJX1PbxSyiI4bGhVYxL
+ZaNmJY/wvfLrwNcqZRLzgRJNHyix5tnhlAAjWd+Vv6O5nIiHUe5qKxFBU2CpGH1h
+X5/HEkat8zBQwoJZz6lS86OccjQ/ITok+F1ckjDcl7Q7YEmOsob8ajaUi+8zTMsk
+gsNnNVsUHzYYzWJsBVMqBic6uDtsfqNUtyP3W3xt3DaK0buYQt14CmYoNG6Iqls5
+Jpfgzsa13Pkh3cKNmPnDKyEZPbAe13Ko9CIB5Bb6cD4rIbS+Al1iLq8iMo9sccIj
+785s8hysVhOpk2LlrLtlYkYo/Qb+t4fq51hf1fkEfC5vslIX7t69ONVMQMoPlG3Y
++NX753N5mw81v8mW+SSZfEgkry9YGYwKOirJnvJqdjtF0w2odAFwXlAiw6Ltmkv1
+y54XXcbU6o/xMJ84E8nVOx6dHtX64GdP8Bg+y8wsSeE2KxCQnmJog1a5j+Lu4RiK
+pgcLMjaQ+5qdR/TnzgwH1vaUpQCQ0uSNIIpGMZ31lJ1NRNJdEcI=
+=F9g1
 -----END PGP SIGNATURE-----

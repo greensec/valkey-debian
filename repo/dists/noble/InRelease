@@ -2,44 +2,44 @@
 Hash: SHA512
 
 Codename: noble
-Date: Thu, 17 Jul 2025 16:58:01 UTC
+Date: Thu, 17 Jul 2025 21:29:22 UTC
 Architectures: amd64 arm64
 Components: main
 Description: greensec/valkey-debian
 MD5Sum:
- 72062ed74b1692930df382875d2e20fa 2873 main/binary-amd64/Packages
- ac4dcfc32dab95a3971d66d76025cd99 1004 main/binary-amd64/Packages.gz
+ 73ee85a81bf4aef071767fa06eeb0cf5 2801 main/binary-amd64/Packages
+ ac4e9479759ad24477dfffda8292d901 994 main/binary-amd64/Packages.gz
  af3ebcf028b6035cd44ba6a22a192cfe 72 main/binary-amd64/Release
  d41d8cd98f00b204e9800998ecf8427e 0 main/binary-arm64/Packages
  7029066c27ac6f5ef18d660d5741979a 20 main/binary-arm64/Packages.gz
  f09eccc20e68b9e2d83d33a82fb1515f 72 main/binary-arm64/Release
 SHA1:
- 32c5435086d06223a2b448664e9f1aae252b22c5 2873 main/binary-amd64/Packages
- f7116d94adb6e783111f1595080a4ba5e7fd45ec 1004 main/binary-amd64/Packages.gz
+ 82eac95b8a157bef56ae2f831b41c032963fe55d 2801 main/binary-amd64/Packages
+ ba1cd64b9e9963b76b3e092d733d23ca45dea2b0 994 main/binary-amd64/Packages.gz
  1fc3a99e1488fcf968cde4c73befbfcadab39a2e 72 main/binary-amd64/Release
  da39a3ee5e6b4b0d3255bfef95601890afd80709 0 main/binary-arm64/Packages
  46c6643f07aa7f6bfe7118de926b86defc5087c4 20 main/binary-arm64/Packages.gz
  88798d0e39aa69b7e24a89471fb5d3306cd5b102 72 main/binary-arm64/Release
 SHA256:
- 820fe2950eb1b3445a8b0d599cdbcffd6967bbe9ed72e90d2feda52d150eb452 2873 main/binary-amd64/Packages
- c339a980901f5b1fcad497846f6fa792e02334260fd8282934bfd54d78893c93 1004 main/binary-amd64/Packages.gz
+ bd8d9dfcc16f527199dbcd82005130c3cc2b6f265594d6b1d0fd9321c4986e00 2801 main/binary-amd64/Packages
+ f8e1a4a1ce8648ffb1d766c88d446dd2d03107609ec4461de0d91d67867b21dd 994 main/binary-amd64/Packages.gz
  411c06bae38c967a3699cf6e9d95619e2e528f8f1c71d001944abf7013c3a179 72 main/binary-amd64/Release
  e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 0 main/binary-arm64/Packages
  59869db34853933b239f1e2219cf7d431da006aa919635478511fabbfc8849d2 20 main/binary-arm64/Packages.gz
  1f38aeb335f7350323911aab026b0ed9d9d295cd0c42b2be7401fe93d88ba7aa 72 main/binary-arm64/Release
 -----BEGIN PGP SIGNATURE-----
 
-iQIzBAEBCgAdFiEEga/Afm0npMGA3feNyyUWHVEdjYQFAmh5K5kACgkQyyUWHVEd
-jYSKZxAAgdehwQIDF6ynxIO8yyaGFDRtU2Y3/OfbHTdTkQc6QIWXM6QwQsfrB/aY
-SqAF5wZs7cNIdW7ze34FQ1yIRD8KRLBNkCxh2Dany/ytZNhWzlf8ewrVt6Nux0aV
-xzhdK8tIjYPWwwm3rOYxFUeZ7BDwB7AgsobQlxvgjvRits7KGNrHADD6XC+aA8yg
-bjvZj95KEY4ljfH/uxBtLSGaipG+dVInDLf7syH9++EngS5X9Do0dTR4ncnzb2l6
-NzqF8iSbxk/hgm+yyjlg9JCjdZqM6gjrbOIK+May0v2dEmO6S/mxxofr5MfEMkqo
-nDOJsJuF5ah6KnmD271gmdTm7xVuqLLN/iFNWOEKWrrKFVZ5XSvj+iz4/gKixQzh
-CTHUiy36wMnEUDDEtBvygKYvyt2l8sAedlO/0i10kCjEiq1K9HyJ/G4lvSNW6fyF
-V4ClcpK7rumW5JSQCy2V53q+JBTAKVEeHNok5Sae0fkCBFt7aqprwGvWlcl4qQwt
-fIGWH8Yq/0V41D3inmpcFpQntTQi+oICe8v7PAVXXIvXZ9j8cJnIAtPn2E3iyeCG
-QMt9YJ4XrB057QiRGLuSkCmeSmtc2Qxu1ywhrQyVmFhuoPigGWP4Uqrz6WJyCEf+
-DleCc+AZDJqqHbuo2NdkLtLkGyRB5lf71wrgTNbbBZ/9aXS3BjE=
-=vcQ9
+iQIzBAEBCgAdFiEEga/Afm0npMGA3feNyyUWHVEdjYQFAmh5azIACgkQyyUWHVEd
+jYSR/Q/+LHfmgyjoXvQa1PZLAVrnH33UO+RAOpKV3AjpzBKh0uoNJYSvfcISHBU2
++nijx5fQEUK8hKflY5KKfpRcu9qpDA5to6PKfWdGAoKG67qGZ7mlaF1rn1xGjv3r
+wzBzJ3zoVrys1BO2IxiuH7R5z6WLnFSgRhii365RFAcMYh+yAKAx6Ck4bjy+qq7s
+KOJKAB0o2lLG7zv7eB1qikAFIgV9Ay/teNQn4GQLalSf92GL0u5rq5dkUblgGmYP
+nJciOviuMqbbURNaPmwAPz3SSW2zmzb7JVGt6KXqoRXyEQXzkQ3E/SKvnmXV0U0J
+lrA9D0KxwUpN48xD15C49ql2c5RRPcn1H2PtWOdW0+Avoc918I9n+hekGxqXAt0l
+vqdFEs5J/XzdYyIOL+2x02FZHZgckeWQ+1Ko//3Vqv5Djy3GSxa1k62mHwpXwjil
+MN6A8lHBHTAOyg6Sv6U9uA+aB4Cyai2mJPAd7cc+h/nv+RRxvk6goPDc1AEGtnXK
+MjgMVSAdu6htEPdzw2/z8d+vg2COtUp6+K3/za+e42OpFjIgpk5AR4flHC6PtbGx
+J1QDhg65rs/86EQC2f/XZbzz0OwSYTLo4dbUwSBX99PwW4+BRAPAe7eWhGQocjHJ
+9g5iKfUZ6FDAOVAFY7i5l0e03hCtb6/MYXoNzijgDRZ8m1L0wGw=
+=ddAx
 -----END PGP SIGNATURE-----
