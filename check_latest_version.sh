@@ -46,8 +46,8 @@ if [ -z $remote_current_release ]; then
 fi
 
 repo_url="https://${GITHUB_REPOSITORY_OWNER}.github.io/${GITHUB_REPOSITORY##*/}/repo"
-own_current_release=$(curl -sL "$repo_url/dists/bookworm/main/binary-amd64/Packages" | \
-    grep -A 3 '^Package: valkey-server$' | \
+own_current_release=$(curl -sL "$repo_url/dists/${2}/main/binary-amd64/Packages" | \
+    grep -A 3 "^Package: ${3}$" | \
     grep '^Version:' | \
     cut -d ' ' -f 2 | \
     head -n 1 | \

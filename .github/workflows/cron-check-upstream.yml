@@ -10,7 +10,7 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - id: check
-      run: ./check_latest_version.sh 'valkey-io/valkey' "${{ github.repository }}"
+      run: ./check_latest_version.sh 'valkey-io/valkey' 'bookworm' 'valkey-server'
       shell: bash
     - name: Commit report
       if: steps.check.outputs.vercomp == 'newer'
