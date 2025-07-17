@@ -45,11 +45,14 @@ if [ -z $remote_current_release ]; then
     echo "own_current_release empty!"
 fi
 
-local_repo="$2"
-if [ -z $local_repo ]; then
-    local_repo="${GITHUB_REPOSITORY}"
-fi
-own_current_release=$(curl -sL https://api.github.com/repos/${local_repo}/releases/latest | jq -r ".tag_name")
+repo_url="https://greensec.github.io/${GITHUB_REPOSITORY}/repo"
+own_current_release=$(curl -sL "$repo_url/dists/bookworm/main/binary-amd64/Packages" | \
+    grep -A 3 '^Package: valkey-server$' | \
+    grep '^Version:' | \
+    cut -d ' ' -f 2 | \
+    head -n 1 | \
+    sed -e 's/-.*//' -e 's/\+.*//')
+
 echo "own_current_release=${own_current_release}" >> $GITHUB_OUTPUT
 if [ -z $own_current_release ]; then
     echo "own_current_release empty!"

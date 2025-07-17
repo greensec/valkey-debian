@@ -15,5 +15,5 @@ jobs:
     - name: Commit report
       if: steps.check.outputs.vercomp == 'newer'
       run: |
-        gh workflow run .github/workflows/build.yml --ref ${{ steps.check.outputs.remote_current_release }} -i valkey_tag=${{ steps.check.outputs.remote_current_release }}
+        gh workflow run .github/workflows/build.yml --ref ${{ steps.check.outputs.remote_current_release }} -F valkey_tag=${{ steps.check.outputs.remote_current_release }}
 
