@@ -87,6 +87,12 @@ jobs:
               apt-get -f install -y
             fi
 
+            if [ "$arch" = "arm64" ]; then
+              dpkg --add-architecture arm64
+              apt-get update
+              apt-get install libatomic1:arm64
+            fi
+
             cp -vr /github/workspace/build-debian/debian /github/workspace/
           extra-build-deps: "devscripts git dpkg-cross"
           before-build-hook: "dch --local ~${{ env.version }} 'GitHub build for ${{ matrix.os-version }}'"
