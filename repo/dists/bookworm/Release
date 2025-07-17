@@ -1,0 +1,26 @@
+Codename: bookworm
+Date: Thu, 17 Jul 2025 16:58:01 UTC
+Architectures: amd64 arm64
+Components: main
+Description: greensec/valkey-debian
+MD5Sum:
+ 9eb560075236ac4903779a650d8c8e68 2894 main/binary-amd64/Packages
+ b5ebf9fb84892fb4f2729e27c744c3b9 1006 main/binary-amd64/Packages.gz
+ af3ebcf028b6035cd44ba6a22a192cfe 72 main/binary-amd64/Release
+ d41d8cd98f00b204e9800998ecf8427e 0 main/binary-arm64/Packages
+ 7029066c27ac6f5ef18d660d5741979a 20 main/binary-arm64/Packages.gz
+ f09eccc20e68b9e2d83d33a82fb1515f 72 main/binary-arm64/Release
+SHA1:
+ 1d1d8ac8f290863bb013f6dc57a88da434b71675 2894 main/binary-amd64/Packages
+ 0224d3aef70fd7800a06c7db02b568fd6f24f79d 1006 main/binary-amd64/Packages.gz
+ 1fc3a99e1488fcf968cde4c73befbfcadab39a2e 72 main/binary-amd64/Release
+ da39a3ee5e6b4b0d3255bfef95601890afd80709 0 main/binary-arm64/Packages
+ 46c6643f07aa7f6bfe7118de926b86defc5087c4 20 main/binary-arm64/Packages.gz
+ 88798d0e39aa69b7e24a89471fb5d3306cd5b102 72 main/binary-arm64/Release
+SHA256:
+ aeff67e93b69bf9e64c985427b3799607bbdceda3c48b36106b25d7843f82b86 2894 main/binary-amd64/Packages
+ a4fe824e30d778765341516de4dacb66423760f526895e3dae1365cb2f580782 1006 main/binary-amd64/Packages.gz
+ 411c06bae38c967a3699cf6e9d95619e2e528f8f1c71d001944abf7013c3a179 72 main/binary-amd64/Release
+ e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 0 main/binary-arm64/Packages
+ 59869db34853933b239f1e2219cf7d431da006aa919635478511fabbfc8849d2 20 main/binary-arm64/Packages.gz
+ 1f38aeb335f7350323911aab026b0ed9d9d295cd0c42b2be7401fe93d88ba7aa 72 main/binary-arm64/Release

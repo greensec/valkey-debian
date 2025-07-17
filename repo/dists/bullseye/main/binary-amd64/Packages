@@ -1,0 +1,70 @@
+Package: valkey-sentinel
+Source: valkey
+Version: 8.1.1+dfsg1-3~bullseye1
+Architecture: amd64
+Maintainer: Lucas Kanashiro <kanashiro@debian.org>
+Installed-Size: 77
+Pre-Depends: init-system-helpers (>= 1.54~)
+Depends: valkey-tools (= 8.1.1+dfsg1-3~bullseye1)
+Homepage: https://valkey.io
+Priority: optional
+Section: database
+Filename: pool/main/v/valkey/valkey-sentinel_8.1.1+dfsg1-3~bullseye1_amd64.deb
+Size: 22844
+SHA256: a13dc48bac2060792588db0729d4d69ca27625f0598a19d2f8ebcbef278a47db
+SHA1: 0418af28bab4b2bae7f33a5710a846cc4181d44a
+MD5sum: fcca5f67155cbb78553e80102acc11ef
+Description: Persistent key-value database with network interface (monitoring)
+ Valkey is a key-value database in a similar vein to memcache but the dataset
+ is non-volatile. Valkey additionally provides native support for atomically
+ manipulating and querying data structures such as lists and sets.
+ .
+ This package contains the Valkey Sentinel monitoring software.
+
+Package: valkey-server
+Source: valkey
+Version: 8.1.1+dfsg1-3~bullseye1
+Architecture: amd64
+Maintainer: Lucas Kanashiro <kanashiro@debian.org>
+Installed-Size: 185
+Pre-Depends: init-system-helpers (>= 1.54~)
+Depends: valkey-tools (= 8.1.1+dfsg1-3~bullseye1)
+Provides: valkey
+Homepage: https://valkey.io
+Priority: optional
+Section: database
+Filename: pool/main/v/valkey/valkey-server_8.1.1+dfsg1-3~bullseye1_amd64.deb
+Size: 58324
+SHA256: f7533553dedabf9ebf39d75a8d54f035b603be3764eef0da5806a86b9dbd286c
+SHA1: 67005a1c827715ce3d4d26a715bf2e3f0cdbd8c6
+MD5sum: 46e0c378bb73bb7280b63fe61b2c21f7
+Description: Persistent key-value database with network interface
+ Valkey is a key-value database in a similar vein to memcache but the dataset
+ is non-volatile. Valkey additionally provides native support for atomically
+ manipulating and querying data structures such as lists and sets.
+ .
+ The dataset is stored entirely in memory and periodically flushed to disk.
+
+Package: valkey-tools
+Source: valkey
+Version: 8.1.1+dfsg1-3~bullseye1
+Architecture: amd64
+Maintainer: Lucas Kanashiro <kanashiro@debian.org>
+Installed-Size: 6718
+Depends: adduser, libatomic1 (>= 4.8), libc6 (>= 2.29), libjemalloc2 (>= 4.0.0), liblzf1 (>= 1.5), libssl1.1 (>= 1.1.1), libsystemd0
+Suggests: ruby-redis
+Homepage: https://valkey.io
+Priority: optional
+Section: database
+Filename: pool/main/v/valkey/valkey-tools_8.1.1+dfsg1-3~bullseye1_amd64.deb
+Size: 1167744
+SHA256: fc3769af8013f1026d89e989ba52a28065e42f30607cd15f6eef8808ed3cdc72
+SHA1: 15ca6324de1ea256a762427e43d2f7fc43101b48
+MD5sum: a82e38868628add7336597f787b2a111
+Description: Persistent key-value database with network interface (client)
+ Valkey is a key-value database in a similar vein to memcache but the dataset
+ is non-volatile. Valkey additionally provides native support for atomically
+ manipulating and querying data structures such as lists and sets.
+ .
+ This package contains the command line client and other tools.
+

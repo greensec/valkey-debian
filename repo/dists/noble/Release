@@ -1,0 +1,26 @@
+Codename: noble
+Date: Thu, 17 Jul 2025 16:58:01 UTC
+Architectures: amd64 arm64
+Components: main
+Description: greensec/valkey-debian
+MD5Sum:
+ 72062ed74b1692930df382875d2e20fa 2873 main/binary-amd64/Packages
+ ac4dcfc32dab95a3971d66d76025cd99 1004 main/binary-amd64/Packages.gz
+ af3ebcf028b6035cd44ba6a22a192cfe 72 main/binary-amd64/Release
+ d41d8cd98f00b204e9800998ecf8427e 0 main/binary-arm64/Packages
+ 7029066c27ac6f5ef18d660d5741979a 20 main/binary-arm64/Packages.gz
+ f09eccc20e68b9e2d83d33a82fb1515f 72 main/binary-arm64/Release
+SHA1:
+ 32c5435086d06223a2b448664e9f1aae252b22c5 2873 main/binary-amd64/Packages
+ f7116d94adb6e783111f1595080a4ba5e7fd45ec 1004 main/binary-amd64/Packages.gz
+ 1fc3a99e1488fcf968cde4c73befbfcadab39a2e 72 main/binary-amd64/Release
+ da39a3ee5e6b4b0d3255bfef95601890afd80709 0 main/binary-arm64/Packages
+ 46c6643f07aa7f6bfe7118de926b86defc5087c4 20 main/binary-arm64/Packages.gz
+ 88798d0e39aa69b7e24a89471fb5d3306cd5b102 72 main/binary-arm64/Release
+SHA256:
+ 820fe2950eb1b3445a8b0d599cdbcffd6967bbe9ed72e90d2feda52d150eb452 2873 main/binary-amd64/Packages
+ c339a980901f5b1fcad497846f6fa792e02334260fd8282934bfd54d78893c93 1004 main/binary-amd64/Packages.gz
+ 411c06bae38c967a3699cf6e9d95619e2e528f8f1c71d001944abf7013c3a179 72 main/binary-amd64/Release
+ e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 0 main/binary-arm64/Packages
+ 59869db34853933b239f1e2219cf7d431da006aa919635478511fabbfc8849d2 20 main/binary-arm64/Packages.gz
+ 1f38aeb335f7350323911aab026b0ed9d9d295cd0c42b2be7401fe93d88ba7aa 72 main/binary-arm64/Release

@@ -1,0 +1,28 @@
+Description: greensec/valkey-debian
+Codename: bullseye
+Architectures: amd64 arm64
+Components: main
+SignWith: FEDBC0E663E5A96362C26E029D59AF4242B78CA1
+
+
+Description: greensec/valkey-debian
+Codename: bookworm
+Architectures: amd64 arm64
+Components: main
+SignWith: FEDBC0E663E5A96362C26E029D59AF4242B78CA1
+
+
+Description: greensec/valkey-debian
+Codename: noble
+Architectures: amd64 arm64
+Components: main
+SignWith: FEDBC0E663E5A96362C26E029D59AF4242B78CA1
+
+
+Description: greensec/valkey-debian
+Codename: jammy
+Architectures: amd64 arm64
+Components: main
+SignWith: FEDBC0E663E5A96362C26E029D59AF4242B78CA1
+
+
