@@ -28,13 +28,13 @@ jobs:
           ]
         arch: ["amd64", "arm64"]
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           repository: valkey-io/valkey
           ref: refs/tags/${{ github.event.inputs.valkey_tag || env.valkey_tag }}
           submodules: "recursive"
 
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           path: build-debian
 
