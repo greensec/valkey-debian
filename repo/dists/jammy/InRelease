@@ -2,44 +2,44 @@
 Hash: SHA512
 
 Codename: jammy
-Date: Thu, 17 Jul 2025 21:58:18 UTC
+Date: Sat, 04 Oct 2025 20:11:47 UTC
 Architectures: amd64 arm64
 Components: main
 Description: greensec/valkey-debian
 MD5Sum:
- 7b19b92189ec42441aadb67b43f70f9a 2806 main/binary-amd64/Packages
- 3d6192805988901ebcc2b4c46b607ded 1002 main/binary-amd64/Packages.gz
+ 33234af59ef8d59f21d86f23834546c9 2806 main/binary-amd64/Packages
+ bfa7bdcd8244513b3b8d296e039f6794 1003 main/binary-amd64/Packages.gz
  af3ebcf028b6035cd44ba6a22a192cfe 72 main/binary-amd64/Release
- aff3e66407a7ee3cc434532a0de8f69b 2806 main/binary-arm64/Packages
- 8cea8f3b5ee81357299d99f37452a973 1001 main/binary-arm64/Packages.gz
+ 6fe74f2e516cb7153d1f2fefc240ab91 2806 main/binary-arm64/Packages
+ 0c20c2021b3855cee5b66291d5c151f7 1002 main/binary-arm64/Packages.gz
  f09eccc20e68b9e2d83d33a82fb1515f 72 main/binary-arm64/Release
 SHA1:
- 19f17f01fd6c7ed7e39372756a5cd95dc5ec11b7 2806 main/binary-amd64/Packages
- c3e7b10363410d257bbae129cff462935909a1a4 1002 main/binary-amd64/Packages.gz
+ b8b41aa3ee1e04115bc4f400175b567b47797746 2806 main/binary-amd64/Packages
+ 2e6ebc9998817792f98a853a2d95607e4751a414 1003 main/binary-amd64/Packages.gz
  1fc3a99e1488fcf968cde4c73befbfcadab39a2e 72 main/binary-amd64/Release
- 0b600cabbeaf0d9008ce56af422ec0334a88bd3a 2806 main/binary-arm64/Packages
- 8eda863954dcd13c6b514d62ae30576a18acbdc9 1001 main/binary-arm64/Packages.gz
+ c6792d8a0ff9fc0a2a2e73ef49a9dec79c399657 2806 main/binary-arm64/Packages
+ eeeae2a368897003e98a61523f0d26c3c336290c 1002 main/binary-arm64/Packages.gz
  88798d0e39aa69b7e24a89471fb5d3306cd5b102 72 main/binary-arm64/Release
 SHA256:
- 9d27453bb648ff5fb7ed0083d1734016ec16cc3f7d63b7ed8870d8a0edcaed8e 2806 main/binary-amd64/Packages
- 64e9cae78451c6938e87ea9ec275f03126bb931bad470b1b9a248bc701953599 1002 main/binary-amd64/Packages.gz
+ e6e911f41eb2f23b78a85311fa9a3a50ec0b50395721a54b7aeeea50e66902a6 2806 main/binary-amd64/Packages
+ 5564c928bd019c89999d7e7e88454230d74d8a8378e126b8701a5233deebbd21 1003 main/binary-amd64/Packages.gz
  411c06bae38c967a3699cf6e9d95619e2e528f8f1c71d001944abf7013c3a179 72 main/binary-amd64/Release
- 2c6dcfa55440478aafa0f51a276a6a133bc7834e0e5e2242e07ccd8a376e7072 2806 main/binary-arm64/Packages
- f999e79a5a15178828a007268714a006e4400a49c368055208c082bbe6afe0b2 1001 main/binary-arm64/Packages.gz
+ 59193de19f6b1a5fea613ecde339193de95ab262fcab31dc0d125a6a4afc3dc0 2806 main/binary-arm64/Packages
+ 31c2c2afe574efa70967742811665ca467a138cdda0f8a5314f65dd1c0f8762d 1002 main/binary-arm64/Packages.gz
  1f38aeb335f7350323911aab026b0ed9d9d295cd0c42b2be7401fe93d88ba7aa 72 main/binary-arm64/Release
 -----BEGIN PGP SIGNATURE-----
 
-iQIzBAEBCgAdFiEEga/Afm0npMGA3feNyyUWHVEdjYQFAmh5cfoACgkQyyUWHVEd
-jYQmig//Rlw1CDi8ptay7fRykGsnarXfgVg0Fi41+ErkKNZqJz568cBYNgnmeYAo
-gW9vBmaMYR05bdc2vnNrhh5I5GHtOrDvU2pK0KGxRVUSPaZM7SLxRFt8kaa8CnM0
-Rxegv4tj4qtS4ZwcPPgMdTHdTHGKI8bYOHADJV34aeWjWLjgoe7kop0J3hQW6o8u
-S0YTqQHUZHjkVGDu/SBD+u/JVX72hCG72b56c3cYJzXpNGhORb55nGlHB2HOonVD
-WHPQugOHcGs7+TPcq981hNQ6aeSmh7XCKuH9Tim/M/fWVcEYhzjlTAXQJwexx8xm
-KheuOBXWlMdYZ/z9MIpYtFDKb+FhfSKbobrO6F6Et+78qEoHHcST6XuMfCIUExRu
-6CaTTBhxaSv3despX9PrgMKwU5tCidxUif6VnHiE1jNZiKfR7+99ZB+3X/JXStRQ
-NRxq4et9JCp5NC4I1hMzFj4eUIhkYxul4nCF6QJZ2rkZhxujH8gcPNa0lu8EBtw/
-wzShzIpRckZj/HBv8PPwNt+p5pnsYhSBlEVF2vrB3XguRLgqNoxq5XdU2rjQfEhX
-OsPQ/hGjwyNRXTYKnWkt2XpH+2QSqlHCRFU4w1UIPnZUz/0NHKiZGL8iqSe5uOEf
-Fc0BUAJyUec2YGaoRoXXVr/5e0H4S4HwS9gVqfh5o7cevNlSdyw=
-=ojtb
+iQIzBAEBCgAdFiEEga/Afm0npMGA3feNyyUWHVEdjYQFAmjhf4MACgkQyyUWHVEd
+jYSFVQ//f84nbFywfFdmHoxQcuTveZ8X5JLsnZFcn8TzYLGXDQ29PvOza+Be1K/5
+6/CzOdmJxppjeG3/OiUi1PUZ6mbl6eZMFP2MG76XHC3H/yBoo+dlt77dowRcuefD
+IGMLq92F5UZATcbaQFADdZ6e8q3lOK04xAdq1eJdcg94JzGnuQwtN24kRXhXQHbD
+9uWwkTQPp7QC1l/+bW1fBmpOFx1MDT5/ulEOv6Inn43z0eTEpH2G6Kpq0GBJ6HIh
+mkaWAWIag+nI22162sE1C/PcxsOe51HxIFTDdZjwRAeX5mfdTcwwW1l1+3P4eNoo
+IZpqIvz9eYNJq+81x7TEnkIAgrVuQWEpdnfc9q16Uj+PHy0vRcH5T9XpYAVsj5gN
+9JCdCsVxzSDqyt5KdGzHg7n9U4UkG9HzefN9Ygbme29a1ErqZk+w/EtUw3GE7z0q
+oz1rPG9voZDHyz0dnunLIKgijVa0SreZFqO+GahMF8lliKrooDbJuRWPBV9aBcnC
+EAiiD+mbOyloW/S8rxY8O3YntyAG26ljRW+5SiGQTp6TIlYLt421notwxRKjdL+0
+rzQJ6k/KxAxmgkVgIP+TqG9uee4ODqFD7wibF/8FZp4ppeqpBZ8jEbsZwBUzT2rJ
+6ArTDofUfn0xeKQkCY/pMm5rCpnfn43v/oN2DOs+vYAl5RRC1Ms=
+=oSM4
 -----END PGP SIGNATURE-----
