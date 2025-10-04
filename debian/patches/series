@@ -4,4 +4,3 @@ debian-packaging/0001-Set-Debian-configuration-defaults.patch
 0003-Use-get_current_dir_name-over-PATHMAX.patch
 0004-Add-support-for-USE_SYSTEM_JEMALLOC-flag.patch
 0005-Incorporate-Redis-CVE-for-CVE-2025-27151-2146.patch
-CVE-2025-49112.patch

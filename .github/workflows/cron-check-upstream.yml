@@ -14,6 +14,8 @@ jobs:
       shell: bash
     - name: Commit report
       if: steps.check.outputs.vercomp == 'newer'
+      env:
+        GH_TOKEN: ${{ github.token }}
       run: |
         gh workflow run .github/workflows/build.yml --ref ${{ steps.check.outputs.remote_current_release }} -F valkey_tag=${{ steps.check.outputs.remote_current_release }}
 
