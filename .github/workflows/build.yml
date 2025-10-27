@@ -94,7 +94,7 @@ jobs:
           before-build-hook: "DEBEMAIL='GitHub Actions <github-actions@users.noreply.github.com>' dch -v ${{ env.valkey_tag }}~${{ env.debian_release }} 'GitHub build for ${{ matrix.os-version }}'"
           buildpackage-opts: --build=binary --no-sign -d
       - name: Upload deb files
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: "packages-${{ env.debian_release }}-${{ matrix.arch }}"
           path: ./debian/artifacts/*
@@ -105,7 +105,7 @@ jobs:
     needs: build
     steps:
       - name: debian-packages
-        uses: actions/upload-artifact/merge@v4
+        uses: actions/upload-artifact/merge@v5
 
   add_release:
     name: Add package to release
