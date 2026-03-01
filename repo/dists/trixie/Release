@@ -1,0 +1,26 @@
+Codename: trixie
+Date: Sun, 01 Mar 2026 20:43:30 UTC
+Architectures: amd64 arm64
+Components: main
+Description: greensec/valkey-debian
+MD5Sum:
+ 053210d7a851319f019c8fd389768d7c 2809 main/binary-amd64/Packages
+ c55dcf831c6138205ef77588baeeb526 999 main/binary-amd64/Packages.gz
+ af3ebcf028b6035cd44ba6a22a192cfe 72 main/binary-amd64/Release
+ eae9aa2f6464c4ce1c2759ca5d0b38f3 2809 main/binary-arm64/Packages
+ 59d8e146d91270bcd7b2da9b44a66c80 998 main/binary-arm64/Packages.gz
+ f09eccc20e68b9e2d83d33a82fb1515f 72 main/binary-arm64/Release
+SHA1:
+ 04e280df22a2ebf55fc12b4343ea85aceae708d4 2809 main/binary-amd64/Packages
+ f19b98c891cbf3c910823a7557b7418d4d334b26 999 main/binary-amd64/Packages.gz
+ 1fc3a99e1488fcf968cde4c73befbfcadab39a2e 72 main/binary-amd64/Release
+ 7ebdc1a93cb442f85af46549e000108b9a0c29ea 2809 main/binary-arm64/Packages
+ 1f77ca36a48ba238d005aced41ef588b84a198bf 998 main/binary-arm64/Packages.gz
+ 88798d0e39aa69b7e24a89471fb5d3306cd5b102 72 main/binary-arm64/Release
+SHA256:
+ 161bd33ae6323e1adaa4649743f23e660dbfdbed629dc817eb746e6e60c3a247 2809 main/binary-amd64/Packages
+ c5524823a514c2161cc4ace62a2953ee6b07a8095cb6fd616dd6f66c65bfe75f 999 main/binary-amd64/Packages.gz
+ 411c06bae38c967a3699cf6e9d95619e2e528f8f1c71d001944abf7013c3a179 72 main/binary-amd64/Release
+ 120ae1fc02981a47f60d78d93f364709ceefa332cecd88e49cee3e57fdb01460 2809 main/binary-arm64/Packages
+ 70ca5828ba4f26422030cfc69ad180da95443567968414d2ef5ad361e34c6d79 998 main/binary-arm64/Packages.gz
+ 1f38aeb335f7350323911aab026b0ed9d9d295cd0c42b2be7401fe93d88ba7aa 72 main/binary-arm64/Release
