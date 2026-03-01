@@ -118,7 +118,7 @@ jobs:
     env:
       GH_TOKEN: ${{ github.token }}
     steps:
-      - uses: actions/download-artifact@v5
+      - uses: actions/download-artifact@v7
         with:
           name: merged-artifacts
       - name: Release
@@ -134,7 +134,7 @@ jobs:
       contents: write
     needs: merge-artefacts
     steps:
-      - uses: actions/download-artifact@v5
+      - uses: actions/download-artifact@v7
         with:
           name: "merged-artifacts"
       - name: Add releases to repo
