@@ -12,9 +12,6 @@ on:
         description: "Version Tag"
         default: "8.1.4"
         required: true
-  push:
-    tags:
-      - "*.*.*"
 
 jobs:
   build:
@@ -26,7 +23,6 @@ jobs:
           [
             "debian:bullseye",
             "debian:bookworm",
-            "debian:trixie",
             "ubuntu:noble",
             "ubuntu:jammy",
           ]
@@ -138,7 +134,7 @@ jobs:
         with:
           name: "merged-artifacts"
       - name: Add releases to repo
-        uses: smeinecke/apt-repo-action@key-update
+        uses: smeinecke/apt-repo-action@master
         with:
           github_token: ${{ github.token }}
           repo_supported_arch: |
@@ -147,7 +143,6 @@ jobs:
           repo_supported_version: |
             bullseye
             bookworm
-            trixie
             noble
             jammy
           file: |
