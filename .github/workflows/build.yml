@@ -10,7 +10,7 @@ on:
     inputs:
       valkey_tag:
         description: "Version Tag"
-        default: "8.1.4"
+        default: "9.0.3"
         required: true
 
 jobs:
