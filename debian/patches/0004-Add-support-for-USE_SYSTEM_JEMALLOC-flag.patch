@@ -14,11 +14,11 @@ Last-Update: 28-04-2025
  7 files changed, 34 insertions(+)
 
 diff --git a/deps/Makefile b/deps/Makefile
-index 72389de..6c5d8d7 100644
+index 7815fe1..4a0fafa 100644
 --- a/deps/Makefile
 +++ b/deps/Makefile
 @@ -39,7 +39,9 @@ distclean:
- 	-(cd hiredis && $(MAKE) clean) > /dev/null || true
+ 	-(cd libvalkey && $(MAKE) clean) > /dev/null || true
  	-(cd linenoise && $(MAKE) clean) > /dev/null || true
  	-(cd lua && $(MAKE) clean) > /dev/null || true
 +ifneq ($(USE_SYSTEM_JEMALLOC),yes)
@@ -28,7 +28,7 @@ index 72389de..6c5d8d7 100644
  	-(cd fpconv && $(MAKE) clean) > /dev/null || true
  	-(cd fast_float_c_interface && $(MAKE) clean) > /dev/null || true
 diff --git a/src/Makefile b/src/Makefile
-index ac88fc0..8aefc33 100644
+index 55cc158..1b3385f 100644
 --- a/src/Makefile
 +++ b/src/Makefile
 @@ -290,10 +290,15 @@ ifeq ($(MALLOC),tcmalloc_minimal)
@@ -45,10 +45,10 @@ index ac88fc0..8aefc33 100644
  endif
 +endif
  
- # LIBSSL & LIBCRYPTO
- LIBSSL_LIBS=
+ ifeq ($(USE_LTTNG),yes)
+ 	FINAL_CFLAGS+=-DUSE_LTTNG
 diff --git a/src/debug.c b/src/debug.c
-index 4a57cd4..88b37af 100644
+index 56dbdfb..081ae1e 100644
 --- a/src/debug.c
 +++ b/src/debug.c
 @@ -82,6 +82,10 @@ void bugReportEnd(int killViaSignal, int sig);
@@ -63,10 +63,10 @@ index 4a57cd4..88b37af 100644
  
  /* Compute the sha1 of string at 's' with 'len' bytes long.
 diff --git a/src/object.c b/src/object.c
-index fccd1f1..a8e2d7a 100644
+index 56a0340..65029b8 100644
 --- a/src/object.c
 +++ b/src/object.c
-@@ -45,6 +45,10 @@
+@@ -47,6 +47,10 @@
  /* For objects with large embedded keys, we reserve space for an expire field,
   * so if expire is set later, we don't need to reallocate the object. */
  #define KEY_SIZE_TO_INCLUDE_EXPIRE_THRESHOLD 128
@@ -78,7 +78,7 @@ index fccd1f1..a8e2d7a 100644
  /* ===================== Creation and parsing of objects ==================== */
  
 diff --git a/src/sds.c b/src/sds.c
-index 2f40c9d..7f04c97 100644
+index f9b3f78..125b069 100644
 --- a/src/sds.c
 +++ b/src/sds.c
 @@ -39,6 +39,10 @@
@@ -93,7 +93,7 @@ index 2f40c9d..7f04c97 100644
  
  int sdsHdrSize(char type) {
 diff --git a/src/zmalloc.c b/src/zmalloc.c
-index 24dd11a..5c8e17a 100644
+index 341da4d..46c46ac 100644
 --- a/src/zmalloc.c
 +++ b/src/zmalloc.c
 @@ -80,11 +80,22 @@ void zlibc_free(void *ptr) {
@@ -120,7 +120,7 @@ index 24dd11a..5c8e17a 100644
  #define thread_local _Thread_local
  
 diff --git a/src/zmalloc.h b/src/zmalloc.h
-index 68b4df6..6bfab3d 100644
+index db260bb..bf109bb 100644
 --- a/src/zmalloc.h
 +++ b/src/zmalloc.h
 @@ -53,7 +53,11 @@
