@@ -8,7 +8,7 @@ jobs:
   check_upstream:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v5
+    - uses: actions/checkout@v6
     - id: check
       run: ./check_latest_version.sh 'valkey-io/valkey' 'bookworm' 'valkey-server'
       shell: bash
