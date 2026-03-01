@@ -11,6 +11,7 @@ Pre-built packages are available at: [https://greensec.github.io/valkey-debian/]
 ### Debian
 - bullseye (11)
 - bookworm (12)
+- trixie (13)
 
 ### Ubuntu
 - jammy (22.04 LTS)
@@ -31,8 +32,8 @@ apt-get install valkey
 #### Manually
 ```bash
 apt-get install wget lsb-release ca-certificates
-wget -O /usr/share/keyrings/greensec.github.io-valkey-debian.key https://greensec.github.io/valkey-debian/public.key
-echo "deb [signed-by=/usr/share/keyrings/greensec.github.io-valkey-debian.key] https://greensec.github.io/valkey-debian/repo $(lsb_release -sc) main" > /etc/apt/sources.list.d/valkey-debian.list
+wget -O /usr/share/keyrings/greensec.github.io-valkey-debian.gpg https://greensec.github.io/valkey-debian/public.gpg
+echo "deb [signed-by=/usr/share/keyrings/greensec.github.io-valkey-debian.gpg] https://greensec.github.io/valkey-debian/repo $(lsb_release -sc) main" > /etc/apt/sources.list.d/valkey-debian.list
 apt-get update && apt-get install valkey
 ```
 
