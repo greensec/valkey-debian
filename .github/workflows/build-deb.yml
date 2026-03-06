@@ -1,0 +1,109 @@
+name: Manually build package
+
+permissions:
+  contents: read
+
+on:
+  workflow_dispatch:
+    inputs:
+      valkey_tag:
+        description: "Version Tag"
+        default: "9.0.3"
+        required: true
+      flavor:
+        description: "Debian/Ubuntu flavor (e.g. debian:trixie, ubuntu:noble)"
+        default: "debian:trixie"
+        required: true
+      arch:
+        type: choice
+        description: "Architecture"
+        options:
+          - "amd64"
+          - "arm64"
+        default: "amd64"
+        required: true
+
+jobs:
+  build-deb:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          path: build-debian
+
+      - name: Validate Flavor
+        run: |
+          set -eu
+          flavor="${{ inputs.flavor }}"
+          if ! grep -qx "${flavor}" build-debian/.github/supported-releases.txt; then
+            echo "Unsupported flavor: ${flavor}"
+            echo "Supported flavors:"
+            cat build-debian/.github/supported-releases.txt
+            exit 1
+          fi
+
+      - uses: actions/checkout@v6
+        with:
+          repository: valkey-io/valkey
+          ref: refs/tags/${{ inputs.valkey_tag }}
+          submodules: "recursive"
+
+      - name: Extract OS Flavor and Version
+        run: |
+          os_version="${{ inputs.flavor }}"
+          echo "flavor=${os_version%%:*}" >> "$GITHUB_ENV"
+          echo "debian_release=${os_version##*:}" >> "$GITHUB_ENV"
+
+      - uses: jtdor/build-deb-action@v1.9.1
+        env:
+          DEB_BUILD_OPTIONS: noautodbgsym
+        with:
+          docker-image: "${{ inputs.flavor }}"
+          host-arch: "${{ inputs.arch }}"
+          setup-hook: |
+            export DEBIAN_FRONTEND=noninteractive
+            os_version="${{ inputs.flavor }}"
+            flavor=${os_version%%:*}
+            arch="${{ inputs.arch }}"
+            if [ "$flavor" = "ubuntu" ] && [ "$arch" = "arm64" ]; then
+              # check for deb822 source format
+              if [ -f /etc/apt/sources.list.d/ubuntu.sources ]; then
+                cp /etc/apt/sources.list.d/ubuntu.sources /etc/apt/sources.list.d/ubuntu-arm.sources
+                sed -i 's,[a-z]*.ubuntu.com,ports.ubuntu.com,' /etc/apt/sources.list.d/ubuntu-arm.sources
+                sed -i 's,/ubuntu/$,/ubuntu-ports/,' /etc/apt/sources.list.d/ubuntu-arm.sources
+                sed -i 's/^Components:/Architectures: arm64\nComponents:/' /etc/apt/sources.list.d/ubuntu-arm.sources
+                sed -i 's/^Components:/Architectures: amd64\nComponents:/' /etc/apt/sources.list.d/ubuntu.sources
+              else
+                cp /etc/apt/sources.list /etc/apt/sources.list.d/ubuntu-arm.list
+                sed -i 's/^deb /deb [arch=amd64] /' /etc/apt/sources.list
+                sed -i 's,[a-z]*.ubuntu.com,ports.ubuntu.com,' /etc/apt/sources.list.d/ubuntu-arm.list
+                sed -i 's,/ubuntu/ ,/ubuntu-ports/ ,' /etc/apt/sources.list.d/ubuntu-arm.list
+                sed -i 's/^deb /deb [arch=arm64] /' /etc/apt/sources.list.d/ubuntu-arm.list
+                cat /etc/apt/sources.list  /etc/apt/sources.list.d/ubuntu-arm.list
+              fi
+            fi
+            if [ "$os_version" = "debian:bullseye" ]; then
+              # update autoconf for bullseye
+              apt-get -q update
+              apt-get install -y --no-install-recommends wget ca-certificates
+              wget -q -O /tmp/autoconf_2.71-3_all.deb http://ftp.us.debian.org/debian/pool/main/a/autoconf/autoconf_2.71-3_all.deb
+              dpkg --force-depends -i /tmp/autoconf_2.71-3_all.deb
+              apt-get -f install -y
+            fi
+
+            if [ "$arch" = "arm64" ]; then
+              dpkg --add-architecture arm64
+              apt-get update
+              apt-get install -y libatomic1:arm64
+            fi
+
+            cp -vr /github/workspace/build-debian/debian /github/workspace/
+          extra-build-deps: "devscripts git dpkg-cross"
+          before-build-hook: "DEBEMAIL='GitHub Actions <github-actions@users.noreply.github.com>' dch -v ${{ inputs.valkey_tag }}~${{ env.debian_release }} 'GitHub manual build for ${{ inputs.flavor }}'"
+          buildpackage-opts: --build=binary --no-sign -d
+
+      - name: Upload deb files
+        uses: actions/upload-artifact@v6
+        with:
+          name: "packages-${{ env.debian_release }}-${{ inputs.arch }}"
+          path: ./debian/artifacts/*

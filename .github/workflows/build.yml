@@ -14,19 +14,41 @@ on:
         required: true
 
 jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    outputs:
+      os_matrix: ${{ steps.releases.outputs.os_matrix }}
+      repo_versions: ${{ steps.releases.outputs.repo_versions }}
+    steps:
+      - uses: actions/checkout@v6
+      - name: Load Supported Releases
+        id: releases
+        run: |
+          set -eu
+          mapfile -t releases < <(grep -E '^[a-z]+:[a-z0-9]+$' .github/supported-releases.txt)
+          if [ "${#releases[@]}" -eq 0 ]; then
+            echo "No supported releases found in .github/supported-releases.txt"
+            exit 1
+          fi
+
+          os_matrix="$(printf '%s\n' "${releases[@]}" | jq -R . | jq -s -c .)"
+          repo_versions="$(printf '%s\n' "${releases[@]}" | cut -d: -f2)"
+
+          echo "os_matrix=${os_matrix}" >> "$GITHUB_OUTPUT"
+          {
+            echo "repo_versions<<EOF"
+            printf '%s\n' "${repo_versions}"
+            echo "EOF"
+          } >> "$GITHUB_OUTPUT"
+
   build:
     runs-on: ubuntu-latest
+    needs:
+      - prepare
     strategy:
       fail-fast: false
       matrix:
-        os-version:
-          [
-            "debian:bullseye",
-            "debian:bookworm",
-            "debian:trixie",
-            "ubuntu:noble",
-            "ubuntu:jammy",
-          ]
+        os-version: ${{ fromJson(needs.prepare.outputs.os_matrix) }}
         arch: ["amd64", "arm64"]
     steps:
       - uses: actions/checkout@v6
@@ -47,7 +69,7 @@ jobs:
           echo "debian_release=${os_version##*:}" >> $GITHUB_ENV
           echo "valkey_tag=${{ github.event.inputs.valkey_tag || env.valkey_tag }}" >> $GITHUB_ENV
 
-      - uses: jtdor/build-deb-action@v1
+      - uses: jtdor/build-deb-action@v1.9.1
         env:
           DEB_BUILD_OPTIONS: noautodbgsym
         with:
@@ -129,24 +151,21 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
-    needs: merge-artefacts
+    needs:
+      - merge-artefacts
+      - prepare
     steps:
       - uses: actions/download-artifact@v8
         with:
           name: "merged-artifacts"
       - name: Add releases to repo
-        uses: smeinecke/apt-repo-action@master
+        uses: smeinecke/apt-repo-action@v2.1.8
         with:
           github_token: ${{ github.token }}
           repo_supported_arch: |
             amd64
             arm64
-          repo_supported_version: |
-            bullseye
-            bookworm
-            trixie
-            noble
-            jammy
+          repo_supported_version: ${{ needs.prepare.outputs.repo_versions }}
           file: |
             *.deb
           version_by_filename: true
