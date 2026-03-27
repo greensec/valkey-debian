@@ -103,7 +103,7 @@ jobs:
           buildpackage-opts: --build=binary --no-sign -d
 
       - name: Upload deb files
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
           name: "packages-${{ env.debian_release }}-${{ inputs.arch }}"
           path: ./debian/artifacts/*
