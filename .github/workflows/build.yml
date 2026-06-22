@@ -20,7 +20,7 @@ jobs:
       os_matrix: ${{ steps.releases.outputs.os_matrix }}
       repo_versions: ${{ steps.releases.outputs.repo_versions }}
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
       - name: Load Supported Releases
         id: releases
         run: |
@@ -51,13 +51,13 @@ jobs:
         os-version: ${{ fromJson(needs.prepare.outputs.os_matrix) }}
         arch: ["amd64", "arm64"]
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
         with:
           repository: valkey-io/valkey
           ref: refs/tags/${{ github.event.inputs.valkey_tag || env.valkey_tag }}
           submodules: "recursive"
 
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
         with:
           path: build-debian
 

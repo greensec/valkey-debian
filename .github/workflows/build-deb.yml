@@ -27,7 +27,7 @@ jobs:
   build-deb:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
         with:
           path: build-debian
 
@@ -42,7 +42,7 @@ jobs:
             exit 1
           fi
 
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
         with:
           repository: valkey-io/valkey
           ref: refs/tags/${{ inputs.valkey_tag }}
