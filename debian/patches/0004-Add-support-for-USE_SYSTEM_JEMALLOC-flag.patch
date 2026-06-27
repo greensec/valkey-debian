@@ -9,9 +9,9 @@ Last-Update: 28-04-2025
  src/debug.c   |  4 ++++
  src/object.c  |  4 ++++
  src/sds.c     |  4 ++++
- src/zmalloc.c |  5 +++++
+ src/zmalloc.c |  6 ++++++
  src/zmalloc.h |  4 ++++
- 7 files changed, 28 insertions(+)
+ 7 files changed, 29 insertions(+)
 
 diff --git a/deps/Makefile b/deps/Makefile
 index 94d9385..0935dce 100644
@@ -93,16 +93,17 @@ index dcb95b8..373298c 100644
  
  int sdsHdrSize(char type) {
 diff --git a/src/zmalloc.c b/src/zmalloc.c
-index 453b83f..8275093 100644
+index 453b83f..4f8103c 100644
 --- a/src/zmalloc.c
 +++ b/src/zmalloc.c
-@@ -85,11 +85,16 @@ void zlibc_free(void *ptr) {
+@@ -85,11 +85,17 @@ void zlibc_free(void *ptr) {
  #define free(ptr) tc_free(ptr)
  /* Explicitly override malloc/free etc when using jemalloc. */
  #elif defined(USE_JEMALLOC)
 +#if defined(USE_SYSTEM_JEMALLOC)
 +#define je_sdallocx(ptr,size,flags) sdallocx(ptr,size,flags)
 +#define je_mallctl mallctl
++#define je_posix_memalign posix_memalign
 +#else
  #define malloc(size) je_malloc(size)
  #define calloc(count, size) je_calloc(count, size)
