@@ -9,8 +9,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v7
+    - name: Determine check distribution
+      id: distro
+      run: |
+        set -eu
+        first_debian=$(grep -E '^debian:' .github/supported-releases.txt | head -n 1 | cut -d: -f2)
+        echo "distro=${first_debian:-bookworm}" >> "$GITHUB_OUTPUT"
     - id: check
-      run: ./check_latest_version.sh 'valkey-io/valkey' 'bookworm' 'valkey-server'
+      run: ./check_latest_version.sh 'valkey-io/valkey' '${{ steps.distro.outputs.distro }}' 'valkey-server'
       shell: bash
     - name: Trigger build workflow
       if: steps.check.outputs.vercomp == 'newer'
