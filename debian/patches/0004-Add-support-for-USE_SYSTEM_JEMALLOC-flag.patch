@@ -14,7 +14,7 @@ Last-Update: 28-04-2025
  7 files changed, 28 insertions(+)
 
 diff --git a/deps/Makefile b/deps/Makefile
-index 7815fe1..4a0fafa 100644
+index 94d9385..0935dce 100644
 --- a/deps/Makefile
 +++ b/deps/Makefile
 @@ -39,7 +39,9 @@ distclean:
@@ -26,12 +26,12 @@ index 7815fe1..4a0fafa 100644
 +endif
  	-(cd hdr_histogram && $(MAKE) clean) > /dev/null || true
  	-(cd fpconv && $(MAKE) clean) > /dev/null || true
- 	-(cd fast_float_c_interface && $(MAKE) clean) > /dev/null || true
+ 	-(rm -f .make-*)
 diff --git a/src/Makefile b/src/Makefile
-index 55cc158..1b3385f 100644
+index 2812c4d..3bd1c18 100644
 --- a/src/Makefile
 +++ b/src/Makefile
-@@ -290,10 +290,15 @@ ifeq ($(MALLOC),tcmalloc_minimal)
+@@ -330,10 +330,15 @@ ifeq ($(MALLOC),tcmalloc_minimal)
  endif
  
  ifeq ($(MALLOC),jemalloc)
@@ -48,10 +48,10 @@ index 55cc158..1b3385f 100644
  ifeq ($(USE_LTTNG),yes)
  	FINAL_CFLAGS+=-DUSE_LTTNG
 diff --git a/src/debug.c b/src/debug.c
-index 56dbdfb..081ae1e 100644
+index daa676a..cccf50e 100644
 --- a/src/debug.c
 +++ b/src/debug.c
-@@ -82,6 +82,10 @@ void bugReportEnd(int killViaSignal, int sig);
+@@ -87,6 +87,10 @@ void bugReportEnd(int killViaSignal, int sig);
  void logStackTrace(void *eip, int uplevel, int current_thread);
  void sigalrmSignalHandler(int sig, siginfo_t *info, void *secret);
  
@@ -63,10 +63,10 @@ index 56dbdfb..081ae1e 100644
  
  /* Compute the sha1 of string at 's' with 'len' bytes long.
 diff --git a/src/object.c b/src/object.c
-index 56a0340..65029b8 100644
+index fe2e76f..f6f7aa6 100644
 --- a/src/object.c
 +++ b/src/object.c
-@@ -47,6 +47,10 @@
+@@ -48,6 +48,10 @@
  /* For objects with large embedded keys, we reserve space for an expire field,
   * so if expire is set later, we don't need to reallocate the object. */
  #define KEY_SIZE_TO_INCLUDE_EXPIRE_THRESHOLD 128
@@ -78,7 +78,7 @@ index 56a0340..65029b8 100644
  /* ===================== Creation and parsing of objects ==================== */
  
 diff --git a/src/sds.c b/src/sds.c
-index f9b3f78..125b069 100644
+index dcb95b8..373298c 100644
 --- a/src/sds.c
 +++ b/src/sds.c
 @@ -39,6 +39,10 @@
@@ -93,10 +93,10 @@ index f9b3f78..125b069 100644
  
  int sdsHdrSize(char type) {
 diff --git a/src/zmalloc.c b/src/zmalloc.c
-index 341da4d..46c46ac 100644
+index 453b83f..8275093 100644
 --- a/src/zmalloc.c
 +++ b/src/zmalloc.c
-@@ -80,11 +80,16 @@ void zlibc_free(void *ptr) {
+@@ -85,11 +85,16 @@ void zlibc_free(void *ptr) {
  #define free(ptr) tc_free(ptr)
  /* Explicitly override malloc/free etc when using jemalloc. */
  #elif defined(USE_JEMALLOC)
@@ -114,7 +114,7 @@ index 341da4d..46c46ac 100644
  #define thread_local _Thread_local
  
 diff --git a/src/zmalloc.h b/src/zmalloc.h
-index db260bb..bf109bb 100644
+index a35b7cb..0ed6c0a 100644
 --- a/src/zmalloc.h
 +++ b/src/zmalloc.h
 @@ -53,7 +53,11 @@
