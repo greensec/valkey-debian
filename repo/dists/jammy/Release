@@ -1,26 +1,26 @@
 Codename: jammy
-Date: Thu, 23 Jul 2026 17:13:49 UTC
+Date: Tue, 01 Sep 2026 19:06:30 UTC
 Architectures: amd64 arm64
 Components: main
 Description: greensec/valkey-debian
 MD5Sum:
- 30ef62f3428e71f7da77aa98543afcf9 2806 main/binary-amd64/Packages
- cf594105761b2ef2a9a93ad528cb1a29 1005 main/binary-amd64/Packages.gz
+ c2cc9e7af9fefe2639e55ead67d75a50 2806 main/binary-amd64/Packages
+ 499fe3f10e996988d38994a4e2cc8b88 1000 main/binary-amd64/Packages.gz
  af3ebcf028b6035cd44ba6a22a192cfe 72 main/binary-amd64/Release
- ddc5e5e1d4ae7a0b8b2c1a73addc0165 2806 main/binary-arm64/Packages
- d3ef687a835f1fc53615e994ec41132d 1002 main/binary-arm64/Packages.gz
+ 9ba9c01530794e0a464093f9e49c5a80 2806 main/binary-arm64/Packages
+ a04689aa3e8e265fd9a64639c933fefb 1001 main/binary-arm64/Packages.gz
  f09eccc20e68b9e2d83d33a82fb1515f 72 main/binary-arm64/Release
 SHA1:
- ae45797a11c49c992140dfc34c2225bc2dcd3a7b 2806 main/binary-amd64/Packages
- 92aea4a47e7c56841b64e764cd32c85441a25ca5 1005 main/binary-amd64/Packages.gz
+ 18143f35a62c538be523149410a1d52f8dd0f272 2806 main/binary-amd64/Packages
+ 944b2b977086421690e4b688b89ae34475e10701 1000 main/binary-amd64/Packages.gz
  1fc3a99e1488fcf968cde4c73befbfcadab39a2e 72 main/binary-amd64/Release
- d9467d22b987964e43475423770a0df770aba1f1 2806 main/binary-arm64/Packages
- 81a995ab95aae6b77f6221d6e69e8a55465cb7a1 1002 main/binary-arm64/Packages.gz
+ bc9b0528b03e0fa3c5eeef55c3c1af10acce412e 2806 main/binary-arm64/Packages
+ fbba440c13a52d15fc1cc08174b3b4f97b27377f 1001 main/binary-arm64/Packages.gz
  88798d0e39aa69b7e24a89471fb5d3306cd5b102 72 main/binary-arm64/Release
 SHA256:
- a5ddb5dae0659ca6fee1d1de4edb08d25443e27d78eed4fa8db3199357ef7156 2806 main/binary-amd64/Packages
- 5d0be3454f29c987716f9c56fbf7e528ef61fdcbf5b75eaa00a7dd851e4ff14c 1005 main/binary-amd64/Packages.gz
+ 8ca9409c7423b14c005b1cfe15b8eb127934010caa27ce24fbe703d2080a2d55 2806 main/binary-amd64/Packages
+ a98c36702a2003b49867e6daf29c3149cc56a463686a368f7ccfb82ceae9b1ee 1000 main/binary-amd64/Packages.gz
  411c06bae38c967a3699cf6e9d95619e2e528f8f1c71d001944abf7013c3a179 72 main/binary-amd64/Release
- 4d02c268223166aab1296c6d8c04269b9837209e43f44396a3b935a178cdaab6 2806 main/binary-arm64/Packages
- 4a9f591c10671a06d0dd0620315e75c7125074557d15a2dcc884e1bdf08d4e86 1002 main/binary-arm64/Packages.gz
+ a35d2a81d60ac910d7e593d9d84bb217f260032d699e561d33e8ea066a2d6ee1 2806 main/binary-arm64/Packages
+ 59aafc18ae09d6d3bd946293f883422c3b0d5250a991b229fcb7119b61844c9b 1001 main/binary-arm64/Packages.gz
  1f38aeb335f7350323911aab026b0ed9d9d295cd0c42b2be7401fe93d88ba7aa 72 main/binary-arm64/Release
