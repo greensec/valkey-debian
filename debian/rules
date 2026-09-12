@@ -2,6 +2,7 @@
 
 DPKG_EXPORT_BUILDFLAGS = 1
 include /usr/share/dpkg/buildflags.mk
+include /usr/share/dpkg/architecture.mk
 
 export BUILD_TLS = yes
 export CFLAGS CPPFLAGS LDFLAGS
@@ -24,7 +25,11 @@ override_dh_auto_clean:
 	rm -f src/release.h debian/*.service
 
 override_dh_auto_build:
+ifeq (linux,$(DEB_HOST_ARCH_OS))
 	dh_auto_build -- V=1 USE_SYSTEM_JEMALLOC=yes USE_SYSTEMD=yes USE_JEMALLOC=yes
+else
+	dh_auto_build -- V=1 USE_SYSTEM_JEMALLOC=no USE_SYSTEMD=yes USE_JEMALLOC=yes
+endif
 
 override_dh_auto_test:
 ifeq (,$(filter nocheck,$(DEB_BUILD_OPTIONS)))
