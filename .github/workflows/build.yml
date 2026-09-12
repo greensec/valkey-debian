@@ -9,8 +9,8 @@ on:
   workflow_dispatch:
     inputs:
       valkey_tag:
-        description: "Version Tag"
-        default: "9.0.3"
+        description: "Version Tag (e.g. 9.1.1)"
+        default: "9.1.1"
         required: true
 
 jobs:
@@ -51,10 +51,20 @@ jobs:
         os-version: ${{ fromJson(needs.prepare.outputs.os_matrix) }}
         arch: ["amd64", "arm64"]
     steps:
+      - name: Set valkey_tag
+        id: set-tag
+        run: |
+          tag="${{ github.event.inputs.valkey_tag }}"
+          tag="${tag#v}"
+          tag="${tag#V}"
+          tag="${tag#Release/}"
+          tag="${tag#release/}"
+          echo "valkey_tag=${tag}" >> "$GITHUB_ENV"
+
       - uses: actions/checkout@v7
         with:
           repository: valkey-io/valkey
-          ref: refs/tags/${{ github.event.inputs.valkey_tag || env.valkey_tag }}
+          ref: refs/tags/${{ env.valkey_tag }}
           submodules: "recursive"
 
       - uses: actions/checkout@v7
@@ -65,9 +75,8 @@ jobs:
         id: extract-os
         run: |
           os_version="${{ matrix.os-version }}"
-          echo "flavor=${os_version%%:*}" >> $GITHUB_ENV
-          echo "debian_release=${os_version##*:}" >> $GITHUB_ENV
-          echo "valkey_tag=${{ github.event.inputs.valkey_tag || env.valkey_tag }}" >> $GITHUB_ENV
+          echo "flavor=${os_version%%:*}" >> "$GITHUB_ENV"
+          echo "debian_release=${os_version##*:}" >> "$GITHUB_ENV"
 
       - uses: jtdor/build-deb-action@v1.9.1
         env:
@@ -78,7 +87,7 @@ jobs:
           setup-hook: |
             export DEBIAN_FRONTEND=noninteractive
             os_version="${{ matrix.os-version }}"
-            flavor=${os_version%%:*}
+            flavor="${os_version%%:*}"
             arch="${{ matrix.arch }}"
             if [ "$flavor" = "ubuntu" ] && [ "$arch" = "arm64" ]; then
               # check for deb822 source format
@@ -101,7 +110,9 @@ jobs:
               # update autoconf for bullseye
               apt-get -q update
               apt-get install -y --no-install-recommends wget ca-certificates
-              wget -q -O /tmp/autoconf_2.71-3_all.deb http://ftp.us.debian.org/debian/pool/main/a/autoconf/autoconf_2.71-3_all.deb
+              # Use snapshot.debian.org so this URL keeps working even when
+              # the package is removed from the main archive.
+              wget -q -O /tmp/autoconf_2.71-3_all.deb https://snapshot.debian.org/archive/debian/20230115T000000Z/pool/main/a/autoconf/autoconf_2.71-3_all.deb
               dpkg --force-depends -i /tmp/autoconf_2.71-3_all.deb
               apt-get -f install -y
             fi
@@ -113,7 +124,7 @@ jobs:
             fi
 
             cp -vr /github/workspace/build-debian/debian /github/workspace/
-          extra-build-deps: "devscripts git dpkg-cross"
+          extra-build-deps: "devscripts git dpkg-cross dh-sequence-installsysusers"
           before-build-hook: "DEBEMAIL='GitHub Actions <github-actions@users.noreply.github.com>' dch -v ${{ env.valkey_tag }}~${{ env.debian_release }} 'GitHub build for ${{ matrix.os-version }}'"
           buildpackage-opts: --build=binary --no-sign -d
       - name: Upload deb files
@@ -137,7 +148,8 @@ jobs:
     env:
       GH_TOKEN: ${{ github.token }}
     steps:
-      - uses: actions/download-artifact@v8
+      - name: debian-packages
+        uses: actions/download-artifact@v7
         with:
           name: merged-artifacts
       - name: Release
@@ -155,7 +167,8 @@ jobs:
       - merge-artefacts
       - prepare
     steps:
-      - uses: actions/download-artifact@v8
+      - name: debian-packages
+        uses: actions/download-artifact@v7
         with:
           name: "merged-artifacts"
       - name: Add releases to repo
