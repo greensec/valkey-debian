@@ -2,18 +2,6 @@
 
 set -eu
 
-USER="valkey"
-GROUP="$USER"
-CONFFILE="/etc/valkey/sentinel.conf"
-
-if [ "$1" = "configure" ]
-then
-	if ! dpkg-statoverride --list ${CONFFILE} >/dev/null 2>&1
-	then
-		dpkg-statoverride --update --add ${USER} ${GROUP} 640 ${CONFFILE}
-	fi
-fi
-
 #DEBHELPER#
 
 if [ "$1" = "configure" ]

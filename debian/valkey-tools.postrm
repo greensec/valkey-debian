@@ -4,7 +4,6 @@ set -eu
 
 if [ "${1}" = "purge" ]
 then
-	userdel valkey || true
 	rm -rf /var/lib/valkey /var/log/valkey /etc/valkey
 fi
 

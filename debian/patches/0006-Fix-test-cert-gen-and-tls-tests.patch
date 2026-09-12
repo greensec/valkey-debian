@@ -1,0 +1,74 @@
+Description: Fix TLS unit test failures and test cert generation.
+ Fix test server startup client connection errors due to bad certificates and
+ TLS test failures. This is achieved by generating test certificates with
+ extendedKeyUsage and subjectAltName extensions, and ensuring the CA file
+ is provided during channel import.
+Author: Lena Voytek <lena@debian.org>
+Forwarded: not-needed
+Last-Update: 2026-08-21
+--- a/utils/gen-test-certs.sh
++++ b/utils/gen-test-certs.sh
+@@ -45,16 +45,27 @@
+ [ server_cert ]
+ keyUsage = digitalSignature, keyEncipherment
+ nsCertType = server
++extendedKeyUsage = serverAuth
++subjectAltName = @alt_names
+ 
+ [ client_cert ]
+ keyUsage = digitalSignature, keyEncipherment
+ nsCertType = client
++extendedKeyUsage = clientAuth
+ subjectAltName = URI:urn:valkey:user:first, URI:urn:valkey:user:second
++
++[ generic_cert ]
++subjectAltName = @alt_names
++
++[ alt_names ]
++DNS.1 = localhost
++IP.1 = 127.0.0.1
++IP.2 = ::1
+ _END_
+ 
+ generate_cert server "Server-only" "-extfile tests/tls/openssl.cnf -extensions server_cert"
+ generate_cert client "Client-only" "-extfile tests/tls/openssl.cnf -extensions client_cert"
+-generate_cert valkey "Generic-cert"
++generate_cert valkey "Generic-cert" "-extfile tests/tls/openssl.cnf -extensions generic_cert"
+ 
+ # Create a CA bundle and hashed CA directory used by TLS tests.
+ # (ca-multi.crt and ca-dir/)
+--- a/tests/unit/tls.tcl
++++ b/tests/unit/tls.tcl
+@@ -10,28 +10,28 @@
+ 
+         test {TLS: Verify tls-auth-clients behaves as expected} {
+             set s [valkey [srv 0 host] [srv 0 port]]
+-            ::tls::import [$s channel]
++            ::tls::import [$s channel] -cafile "$::tlsdir/ca.crt"
+             catch {$s PING} e
+             assert_match {*error*} $e
+ 
+             r CONFIG SET tls-auth-clients no
+ 
+             set s [valkey [srv 0 host] [srv 0 port]]
+-            ::tls::import [$s channel]
++            ::tls::import [$s channel] -cafile "$::tlsdir/ca.crt"
+             catch {$s PING} e
+             assert_match {PONG} $e
+ 
+             r CONFIG SET tls-auth-clients optional
+ 
+             set s [valkey [srv 0 host] [srv 0 port]]
+-            ::tls::import [$s channel]
++            ::tls::import [$s channel] -cafile "$::tlsdir/ca.crt"
+             catch {$s PING} e
+             assert_match {PONG} $e
+ 
+             r CONFIG SET tls-auth-clients yes
+ 
+             set s [valkey [srv 0 host] [srv 0 port]]
+-            ::tls::import [$s channel]
++            ::tls::import [$s channel] -cafile "$::tlsdir/ca.crt"
+             catch {$s PING} e
+             assert_match {*error*} $e
+         }

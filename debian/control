@@ -1,10 +1,10 @@
 Source: valkey
 Section: database
-Priority: optional
 Maintainer: Lucas Kanashiro <kanashiro@debian.org>
+Uploaders: Lena Voytek <lena@debian.org>
 Build-Depends:
  debhelper-compat (= 13),
- libhiredis-dev,
+ dh-sequence-installsysusers,
  libjemalloc-dev [linux-any],
  liblua5.1-dev,
  liblzf-dev,
@@ -17,11 +17,10 @@ Build-Depends:
  procps <!nocheck>,
  tcl <!nocheck>,
  tcl-tls <!nocheck>,
-Standards-Version: 4.7.2
+Standards-Version: 4.7.4
 Homepage: https://valkey.io
-Vcs-Git: https://github.com/valkey-io/valkey.git
-Vcs-Browser: hhttps://github.com/valkey-io/valkey
-Rules-Requires-Root: no
+Vcs-Git: https://salsa.debian.org/debian/valkey.git
+Vcs-Browser: https://salsa.debian.org/debian/valkey
 
 Package: valkey-server
 Provides: valkey
@@ -55,7 +54,6 @@ Description: Persistent key-value database with network interface (monitoring)
 Package: valkey-tools
 Architecture: any
 Depends:
- adduser,
  ${misc:Depends},
  ${shlibs:Depends},
 Suggests:

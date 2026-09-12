@@ -2,7 +2,7 @@ From: Chris Lamb <lamby@debian.org>
 Date: Mon, 28 Apr 2025 15:45:49 -0300
 Subject: Add CPPFLAGS to upstream makefiles
 
-Last-Update: 30-10-2015
+Last-Update: 2026-07-15
 ---
  deps/fpconv/Makefile        | 2 +-
  deps/hdr_histogram/Makefile | 2 +-
@@ -10,11 +10,9 @@ Last-Update: 30-10-2015
  src/Makefile                | 2 +-
  4 files changed, 4 insertions(+), 4 deletions(-)
 
-diff --git a/deps/fpconv/Makefile b/deps/fpconv/Makefile
-index 2654888..64d2ed0 100644
 --- a/deps/fpconv/Makefile
 +++ b/deps/fpconv/Makefile
-@@ -2,7 +2,7 @@ STD=
+@@ -2,7 +2,7 @@
  WARN= -Wall
  OPT= -Os
  
@@ -23,11 +21,9 @@ index 2654888..64d2ed0 100644
  R_LDFLAGS= $(LDFLAGS)
  DEBUG= -g
  
-diff --git a/deps/hdr_histogram/Makefile b/deps/hdr_histogram/Makefile
-index 28dd93e..3a6413e 100644
 --- a/deps/hdr_histogram/Makefile
 +++ b/deps/hdr_histogram/Makefile
-@@ -2,7 +2,7 @@ STD= -std=c99
+@@ -2,7 +2,7 @@
  WARN= -Wall
  OPT= -Os
  
@@ -36,11 +32,9 @@ index 28dd93e..3a6413e 100644
  R_LDFLAGS= $(LDFLAGS)
  DEBUG= -g
  
-diff --git a/deps/linenoise/Makefile b/deps/linenoise/Makefile
-index 1dd894b..12ada21 100644
 --- a/deps/linenoise/Makefile
 +++ b/deps/linenoise/Makefile
-@@ -6,7 +6,7 @@ R_CFLAGS= $(STD) $(WARN) $(OPT) $(DEBUG) $(CFLAGS)
+@@ -6,7 +6,7 @@
  R_LDFLAGS= $(LDFLAGS)
  DEBUG= -g
  
@@ -49,11 +43,9 @@ index 1dd894b..12ada21 100644
  R_LD=$(CC) $(R_LDFLAGS)
  
  linenoise.o: linenoise.h linenoise.c
-diff --git a/src/Makefile b/src/Makefile
-index 55cc158..8e10acc 100644
 --- a/src/Makefile
 +++ b/src/Makefile
-@@ -391,7 +391,7 @@ else
+@@ -431,7 +431,7 @@
  	MAYBE_UNINSTALL_REDIS_SYMLINK=
  endif
  

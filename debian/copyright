@@ -2,8 +2,6 @@ Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Contact: https://valkey.io/connect/
 Upstream-Name: valkey
 Source: https://github.com/valkey-io/valkey
-Files-Excluded: deps/hiredis/adapters/macosx.h
-                deps/hiredis/examples/example-macosx.c
 
 Files: *
 Copyright: 2006-2020 Salvatore Sanfilippo <antirez@gmail.com>
@@ -20,9 +18,7 @@ Files: tests/support/response_transformers.tcl
        src/connhelpers.h
        src/logreqres.c
        src/call_reply.*
-       src/lua/script_lua.*
        src/socket.c
-       src/lua/function_lua.c
        src/functions.*
        src/resp_parser.*
        src/cli_common.c
@@ -41,6 +37,15 @@ License: BSD-3-clause
 Files: src/crcspeed.c
 Copyright: 2013 Mark Adler <madler@alumni.caltech.edu>
 License: Custom-Mark-Adler
+
+Files: src/crccombine.c
+Copyright: 2013 Mark Adler
+           2019-2024 Josiah Carlson <josiah.carlson@gmail.com>
+License: Custom-Mark-Adler
+
+Files: src/sparkline.*
+Copyright: 2011-2014 Redis Ltd.
+License: BSD-2-clause
 
 Files: src/crc64.c
 Copyright: 2014 Matt Stancliff <matt@genges.com>
@@ -106,9 +111,9 @@ License: ISC
 
 Files: src/setproctitle.c
 Copyright: 2010 William Ahern
-           2013 Salvatore Sanfilippo
+           2013 Redis Ltd.
            2013 Stam He
-License: BSD-3-clause
+License: Expat
 
 Files: src/ae_evport.c
 Copyright: 2012 Joyent, Inc.
@@ -131,7 +136,6 @@ Files: src/rio.*
        src/ziplist.h
        src/intset.*
        src/valkey-check-aof.c
-       deps/hiredis/*
 Copyright: 2009-2014 Pieter Noordhuis <pcnoordhuis@gmail.com>
            2009-2013 Salvatore Sanfilippo <antirez@gmail.com>
 License: BSD-3-clause
@@ -139,6 +143,26 @@ License: BSD-3-clause
 Files: deps/linenoise/*
 Copyright: 2010-2016 Pieter Noordhuis <pcnoordhuis@gmail.com>
            2010-2016 Salvatore Sanfilippo <antirez@gmail.com>
+License: BSD-2-clause
+
+Files: deps/libvalkey/*
+Copyright: 2009-2011 Salvatore Sanfilippo <antirez@gmail.com>
+           2010-2011 Pieter Noordhuis <pcnoordhuis@gmail.com>
+           2015-2017 Ieshen Zheng <ieshen.zheng@163.com>
+           2020 Nick <heronr1@gmail.com>
+           2020-2022 Bjorn Svensson <bjorn.a.svensson@est.tech>
+           2020-2022 Viktor Söderqvist <viktor.soderqvist@est.tech>
+           2021 Red Hat
+           2024 libvalkey contributors
+License: BSD-3-clause
+
+Files: deps/libvalkey/include/valkey/adapters/macosx.h
+       deps/libvalkey/examples/async-macosx.c
+Copyright: 2015 Дмитрий Бахвалов (Dmitry Bakhvalov)
+License: BSD-3-clause
+
+Files: deps/libvalkey/include/valkey/adapters/qt.h
+Copyright: 2014 Pietro Cerutti <gahr@gahr.ch>
 License: BSD-2-clause
 
 Files: src/sha1.c
@@ -154,53 +178,6 @@ Comment: After some discussion with upstream
 	 https://github.com/B-Con/crypto-algorithms/blob/master/sha256.c,
 	 and this repo is available under Public Domain:
 	 https://github.com/B-Con/crypto-algorithms/blob/master/README.md.
-
-Files: deps/hiredis/fuzzing/format_command_fuzzer.c
-       deps/hiredis/hiredis.*
-       deps/hiredis/net.*
-Copyright: 2009-2020 Salvatore Sanfilippo <antirez@gmail.com>
-           2010-2020 Pieter Noordhuis <pcnoordhuis@gmail.com>
-           2015-2020 Matt Stancliff <matt@genges.com>
-           2015-2020 Jan-Erik Rediger <janerik@fnordig.com>
-License: BSD-3-clause
-
-Files: deps/hiredis/sockcompat.*
-Copyright: 2019 Marcus Geelnard <m@bitsnbites.eu>
-License: BSD-3-clause
-
-Files: deps/hiredis/ssl.c
-       src/ziplist.c
-Copyright: 2009-2017 Salvatore Sanfilippo <antirez@gmail.com>
-           2010-2012 Pieter Noordhuis <pcnoordhuis@gmail.com>
-           2019-2020 Redis Labs
-License: BSD-3-clause
-
-Files: deps/hiredis/sdsalloc.h
-       deps/hiredis/sds.*
-Copyright: 2006-2015 Salvatore Sanfilippo <antirez@gmail.com>
-           2015 Oran Agra
-           2015 Redis Labs, Inc
-License: BSD-3-clause
-
-Files: deps/hiredis/adapters/qt.h
-Copyright: 2014 Pietro Cerutti <gahr@gahr.ch>
-License: BSD-2-clause
-
-Files: deps/hiredis/adapters/libev.h
-       deps/hiredis/adapters/libevent.h
-       deps/hiredis/adapters/ae.h
-Copyright: 2010-2011 Pieter Noordhuis <pcnoordhuis@gmail.com>
-License: BSD-3-clause
-
-Files: deps/hiredis/examples/example-push.c
-       deps/hiredis/alloc.*
-       deps/hiredis/sdscompat.h
-Copyright: 2020 Michael Grunder <michael.grunder@gmail.com>
-License: BSD-3-clause
-
-Files: deps/hiredis/hiredis_ssl.h
-Copyright: 2019 Redis Labs
-License: BSD-3-clause
 
 Files: deps/lua/*
 Copyright: 1994-2018 Lua.org, PUC-Ri
@@ -232,6 +209,15 @@ Copyright: 2013-2019 night-shift <as.smljk@gmail.com>
            2021 Redis Labs
 License: BSL-1.0
 
+Files: deps/fast_float/*
+Copyright: 2021 The fast_float authors
+License: Apache-2 or Expat or BSL-1.0
+
+Files: deps/gtest-parallel/*
+Copyright: 2013 Google Inc.
+           2017 Google Inc.
+License: Apache-2
+
 Files: deps/jemalloc/*
 Copyright: 2002-2024 Jason Evans <jasone@canonware.com>
            2007-2012 Mozilla Foundation
@@ -254,8 +240,9 @@ Files: deps/jemalloc/build-aux/config.sub
 Copyright: 1992-2021 Free Software Foundation, Inc.
 License: GPL-3+
 
-Files: deps/jemalloc/test/include/test/SFMT-*.h
+Files: deps/jemalloc/test/include/test/SFMT*.h
        deps/jemalloc/test/src/SFMT.c
+       deps/jemalloc/test/unit/SFMT.c
 Copyright: 2006-2007 Mutsuo Saito, Makoto Matsumoto and Hiroshima University
 License: BSD-3-clause
 
@@ -278,6 +265,7 @@ License: Expat
 Files: debian/*
 Copyright: © 2009—2022 Chris Lamb <lamby@debian.org>
            © 2024 Lucas Kanashiro <kanashiro@debian.org>
+           © 2026 Lena Voytek <lena@debian.org>
 License: BSD-3-clause
 
 License: BSD-2-clause
@@ -374,6 +362,22 @@ License: FSFAP
  permitted in any medium without royalty provided the copyright notice and this
  notice are preserved. This file is offered as-is, without any warranty.
 
+License: Apache-2
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+ .
+ http://www.apache.org/licenses/LICENSE-2.0
+ .
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+ .
+ On Debian systems, the complete text of the Apache version 2.0 license
+ can be found in `/usr/share/common-licenses/Apache-2.0'.
+
 License: GPL-3+
  This program is free software: you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by
@@ -428,4 +432,3 @@ License: Custom-Mark-Adler
  2. Altered source versions must be plainly marked as such, and must not be
     misrepresented as being the original software.
  3. This notice may not be removed or altered from any source distribution.
-

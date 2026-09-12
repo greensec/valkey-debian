@@ -1,5 +1,76 @@
+valkey (9.1.1-1) unstable; urgency=medium
+
+  [ Lena Voytek ]
+  * New upstream version 9.1.1 (Closes: #1144957, #1144956).
+    - Fix CVE-2026-63639 and CVE-2026-56684.
+  * Update patches.
+    - Remove d/p/CVE-2025-67733.patch and CVE-2026-21863.patch already applied
+      by upstream.
+    - Refresh 0002-Add-CPPFLAGS-to-upstream-makefiles.patch.
+    - Use defined() instead of == yes for USE_SYSTEM_JEMALLOC in
+      0004-Add-support-for-USE_SYSTEM_JEMALLOC-flag.patch.
+    - Add 0005-Map-je_posix_memalign-for-system-jemalloc.patch to map
+      je_posix_memalign to posix_memalign for system jemalloc.
+    - Add 0006-support-openssl4-tlsS-tests.patch to fix TLS unit test failures
+      and test certificate generation.
+  * Update watch file.
+    - Use version 5.
+    - Remove repack suffix - no longer needed.
+    - Add uversion-mangle to watch for rc versions.
+  * Update copyright file for new version.
+  * Add Lena Voytek as an uploader.
+  * Update standards version and remove unnecessary fields.
+  * Remove libhiredis-dev dependency - no longer needed.
+
+  [ Luca Boccassi ]
+  * Use sysusers to manage the valkey system user and group.
+
+ -- Lena Voytek <lena@debian.org>  Fri, 21 Aug 2026 18:00:08 -0400
+
+valkey (8.1.4+dfsg1-2) unstable; urgency=medium
+
+  * Fix CVE-2025-67733 (Closes: #1130911).
+    A malicious user can use scripting commands to inject arbitrary
+    information into the response stream for the given client, potentially
+    corrupting or returning tampered data to other users on the same
+    connection. The error handling code for lua scripts does not properly
+    handle null characters.
+    - d/p/CVE-2025-67733.patch
+  * Fix CVE-2026-21863 (Closes: #1130911).
+    A malicious actor with access to the Valkey clusterbus port can send an
+    invalid packet that may cause an out bound read, which might result in
+    the system crashing. The Valkey clusterbus packet processing code does
+    not validate that a clusterbus ping extension packet is located within
+    buffer of the clusterbus packet before attempting to read it.
+    - d/p/CVE-2026-21863.patch
+
+ -- Lucas Kanashiro <kanashiro@debian.org>  Mon, 30 Mar 2026 18:47:11 -0300
+
+valkey (8.1.4+dfsg1-1) unstable; urgency=medium
+
+  * New upstream release.
+    - Fixes CVE-2025-49844, CVE-2025-46817, CVE-2025-46818 and CVE-2025-46819
+      (Closes: #1117687)
+  * Update patches.
+    Remove d/p/CVE-2025-*.patch already applied by upstream
+
+ -- Lucas Kanashiro <kanashiro@debian.org>  Thu, 23 Oct 2025 21:30:33 -0300
+
 valkey (8.1.1+dfsg1-3) unstable; urgency=medium
 
+  * Fix CVE-2025-32023 (Closes: #1108978)
+    An authenticated user may use a specially crafted string to trigger a
+    stack/heap out of bounds write on hyperloglog operations, potentially
+    leading to remote code execution. The bug likely affects all Valkey
+    versions with hyperloglog operations implemented.
+    An additional workaround to mitigate the problem without patching the
+    valkey-server executable is to prevent users from executing hyperloglog
+    operations. This can be done using ACL to restrict HLL commands.
+    - d/p/CVE-2025-32023.patch
+  * Fix CVE-2025-48367 (Closes: #1108982)
+    An unauthenticated connection can cause repeated IP protocol errors,
+    leading to client starvation and, ultimately, a denial of service.
+    - d/p/CVE-2025-48367.patch
   * d/copyright: fix path of the lua files, thanks to lintian!
 
  -- Lucas Kanashiro <kanashiro@debian.org>  Wed, 09 Jul 2025 05:53:22 -0300

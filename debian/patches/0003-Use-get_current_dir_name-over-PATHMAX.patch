@@ -8,10 +8,10 @@ Last-Update: 29-10-2024
  1 file changed, 4 insertions(+), 4 deletions(-)
 
 diff --git a/src/rdb.c b/src/rdb.c
-index c0d8cd9..7e4a254 100644
+index 07c6af6..e3d9d34 100644
 --- a/src/rdb.c
 +++ b/src/rdb.c
-@@ -1488,7 +1488,6 @@ werr: /* Write error. */
+@@ -1492,7 +1492,6 @@ werr: /* Write error. */
  }
  
  static int rdbSaveInternal(int req, const char *filename, rdbSaveInfo *rsi, int rdbflags) {
@@ -19,7 +19,7 @@ index c0d8cd9..7e4a254 100644
      rio rdb;
      int error = 0;
      int saved_errno;
-@@ -1498,11 +1497,12 @@ static int rdbSaveInternal(int req, const char *filename, rdbSaveInfo *rsi, int
+@@ -1502,11 +1501,12 @@ static int rdbSaveInternal(int req, const char *filename, rdbSaveInfo *rsi, int
      if (!fp) {
          saved_errno = errno;
          char *str_err = strerror(errno);
@@ -33,7 +33,7 @@ index c0d8cd9..7e4a254 100644
          errno = saved_errno;
          return C_ERR;
      }
-@@ -1568,7 +1568,6 @@ int rdbSaveToFile(const char *filename) {
+@@ -1572,7 +1572,6 @@ int rdbSaveToFile(const char *filename) {
  /* Save the DB on disk. Return C_ERR on error, C_OK on success. */
  int rdbSave(int req, char *filename, rdbSaveInfo *rsi, int rdbflags) {
      char tmpfile[256];
@@ -41,7 +41,7 @@ index c0d8cd9..7e4a254 100644
  
      startSaving(rdbflags);
      snprintf(tmpfile, 256, "temp-%d.rdb", (int)getpid());
-@@ -1582,11 +1581,12 @@ int rdbSave(int req, char *filename, rdbSaveInfo *rsi, int rdbflags) {
+@@ -1586,11 +1585,12 @@ int rdbSave(int req, char *filename, rdbSaveInfo *rsi, int rdbflags) {
       * if the generate DB file is ok. */
      if (rename(tmpfile, filename) == -1) {
          char *str_err = strerror(errno);
