@@ -1,6 +1,4 @@
-Version: 5
-
-Template: GitHub
-Owner: valkey-io
-Project: valkey
-Uversion-Mangle: s/-rc/~rc/
+version=4
+opts="filenamemangle=s%(?:.*?)?v?(\d[\d.]*@ARCHIVE_EXT@)%@PACKAGE@-$1%,uversionmangle=s/-(rc|beta|alpha|pre)/~$1/" \
+  https://github.com/valkey-io/valkey/tags \
+  (?:.*?/)?v?@ANY_VERSION@@ARCHIVE_EXT@
