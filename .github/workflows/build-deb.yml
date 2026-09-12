@@ -57,6 +57,7 @@ jobs:
           repository: valkey-io/valkey
           ref: refs/tags/${{ env.valkey_tag }}
           submodules: "recursive"
+          path: valkey
 
       - name: Extract OS Flavor and Version
         run: |
@@ -70,6 +71,7 @@ jobs:
         with:
           docker-image: "${{ inputs.flavor }}"
           host-arch: "${{ inputs.arch }}"
+          source-dir: valkey
           setup-hook: |
             export DEBIAN_FRONTEND=noninteractive
             os_version="${{ inputs.flavor }}"
@@ -116,7 +118,7 @@ jobs:
               apt-get install -y libatomic1:arm64
             fi
 
-            cp -vr /github/workspace/build-debian/debian /github/workspace/
+            cp -vr /github/workspace/build-debian/debian /github/workspace/valkey/
           extra-build-deps: "devscripts git dpkg-cross"
           before-build-hook: "DEBEMAIL='GitHub Actions <github-actions@users.noreply.github.com>' dch -v ${{ env.valkey_tag }}~${{ env.debian_release }} 'GitHub manual build for ${{ inputs.flavor }}'"
           buildpackage-opts: --build=binary --no-sign -d
