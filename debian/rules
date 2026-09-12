@@ -35,18 +35,30 @@ override_dh_auto_test:
 ifeq (,$(filter nocheck,$(DEB_BUILD_OPTIONS)))
 	# Generate a root CA and server certificate for testing
 	./utils/gen-test-certs.sh
+	# Run the upstream test suites. Capture the overall result so that
+	# test failures cause the build to fail while still cleaning up.
+	TEST_FAIL=0
 	# Avoid race conditions in upstream testsuite
-	./runtest --clients 1 --verbose --dump-logs --tls || true
-	timeout 30m ./runtest-cluster --tls || true
-	./runtest-sentinel || true
+	./runtest --clients 1 --verbose --dump-logs --tls || TEST_FAIL=1
+	timeout 30m ./runtest-cluster --tls || TEST_FAIL=1
+	./runtest-sentinel || TEST_FAIL=1
 	# Clean up after gen-test-certs.sh
-	rm -rf tests/tls || true
+	rm -rf tests/tls || :
 	# Other cleanup
-	find tests/tmp ! -name .gitignore -type f -exec rm -rfv {} +
+	find tests/tmp ! -name .gitignore -type f -exec rm -rfv {} + || :
+	[ "$$TEST_FAIL" -eq 0 ]
 endif
 
 override_dh_auto_install:
 	debian/bin/generate-systemd-service-files
+
+# dh_installsysusers is not in the default compat-13 sequence, but the
+# command is available in all supported releases. Call it explicitly before
+# dh_installtmpfiles so the valkey user/group exists before the tmpfiles
+# snippets are generated.
+override_dh_installtmpfiles:
+	dh_installsysusers
+	dh_installtmpfiles
 
 override_dh_compress:
 	dh_compress -Xredis-trib.rb
