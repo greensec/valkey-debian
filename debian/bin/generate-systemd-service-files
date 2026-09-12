@@ -28,11 +28,11 @@ do
 			;;
 		esac
 
-		: >${TARGET}
+		: >"${TARGET}"
 
 		if [ "${MODE}" = "templated" ]
 		then
-			cat >> ${TARGET} <<EOF
+			cat >> "${TARGET}" <<EOF
 # Templated service file for ${BINARY}(1)
 #
 # Each instance of ${BINARY} requires its own configuration file:
@@ -44,7 +44,7 @@ do
 #
 #   $ sed -i -e 's@^dbfilename .*@dbfilename dump-myname.rdb@' /etc/valkey/${NAME}-myname.conf
 #
-# We then listen exlusively on UNIX sockets to avoid TCP port collisions:
+# We then listen exclusively on UNIX sockets to avoid TCP port collisions:
 #
 #   $ sed -i -e 's@^port .*@port 0@' /etc/valkey/${NAME}-myname.conf
 #   $ sed -i -e 's@^\\(# \\)\\{0,1\\}unixsocket .*@unixsocket /run/${NAME}-myname/${BINARY}.sock@' /etc/valkey/${NAME}-myname.conf
@@ -64,7 +64,7 @@ do
 EOF
 		fi
 
-		cat >> ${TARGET} <<EOF
+		cat >> "${TARGET}" <<EOF
 [Unit]
 Description=${DESCRIPTION}
 After=network.target
