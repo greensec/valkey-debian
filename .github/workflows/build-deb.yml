@@ -120,7 +120,7 @@ jobs:
 
             cp -vr /github/workspace/build-debian/debian /github/workspace/valkey/
           extra-build-deps: "devscripts git dpkg-cross"
-          before-build-hook: "cd valkey && DEBEMAIL='GitHub Actions <github-actions@users.noreply.github.com>' dch -v ${{ env.valkey_tag }}~${{ env.debian_release }} 'GitHub manual build for ${{ inputs.flavor }}'"
+          before-build-hook: "cd valkey && DEBEMAIL='GitHub Actions <github-actions@users.noreply.github.com>' dch -b -v ${{ env.valkey_tag }}~${{ env.debian_release }} 'GitHub manual build for ${{ inputs.flavor }}'"
           buildpackage-opts: --build=binary --no-sign -d
 
       - name: Upload deb files
