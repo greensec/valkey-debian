@@ -19,8 +19,8 @@ Build-Depends:
  tcl-tls <!nocheck>,
 Standards-Version: 4.7.4
 Homepage: https://valkey.io
-Vcs-Git: https://salsa.debian.org/debian/valkey.git
-Vcs-Browser: https://salsa.debian.org/debian/valkey
+Vcs-Git: https://github.com/greensec/valkey-debian.git
+Vcs-Browser: https://github.com/greensec/valkey-debian
 
 Package: valkey-server
 Provides: valkey
