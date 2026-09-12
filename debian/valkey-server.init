@@ -21,13 +21,15 @@ DESC=valkey-server
 RUNDIR=/run/valkey
 PIDFILE=$RUNDIR/valkey-server.pid
 
-test -x $DAEMON || exit 0
+test -x "$DAEMON" || exit 0
 
-if [ -r /etc/default/$NAME ]
+if [ -r "/etc/default/$NAME" ]
 then
-	. /etc/default/$NAME
+	# shellcheck disable=SC1090
+	. "/etc/default/$NAME"
 fi
 
+# shellcheck disable=SC1091
 . /lib/lsb/init-functions
 
 set -e
@@ -40,18 +42,19 @@ fi
 
 case "$1" in
   start)
-	echo -n "Starting $DESC: "
-	mkdir -p $RUNDIR
-	touch $PIDFILE
-	chown valkey:valkey $RUNDIR $PIDFILE
-	chmod 755 $RUNDIR
+	printf 'Starting %s: ' "$DESC"
+	mkdir -p "$RUNDIR"
+	touch "$PIDFILE"
+	chown valkey:valkey "$RUNDIR" "$PIDFILE"
+	chmod 755 "$RUNDIR"
 
 	if [ -n "$ULIMIT" ]
 	then
-		ulimit -n $ULIMIT || true
+		# shellcheck disable=SC3045
+		ulimit -n "$ULIMIT" || true
 	fi
 
-	if start-stop-daemon --start --quiet --oknodo --umask 007 --pidfile $PIDFILE --chuid valkey:valkey --exec $DAEMON -- $DAEMON_ARGS
+	if start-stop-daemon --start --quiet --oknodo --umask 007 --pidfile "$PIDFILE" --chuid valkey:valkey --exec "$DAEMON" -- "$DAEMON_ARGS"
 	then
 		echo "$NAME."
 	else
@@ -59,25 +62,25 @@ case "$1" in
 	fi
 	;;
   stop)
-	echo -n "Stopping $DESC: "
+	printf 'Stopping %s: ' "$DESC"
 
-	if start-stop-daemon --stop --retry forever/TERM/1 --quiet --oknodo --pidfile $PIDFILE --exec $DAEMON
+	if start-stop-daemon --stop --retry forever/TERM/1 --quiet --oknodo --pidfile "$PIDFILE" --exec "$DAEMON"
 	then
 		echo "$NAME."
 	else
 		echo "failed"
 	fi
-	rm -f $PIDFILE
+	rm -f "$PIDFILE"
 	sleep 1
 	;;
 
   restart|force-reload)
-	${0} stop
-	${0} start
+	"$0" stop
+	"$0" start
 	;;
 
   status)
-	status_of_proc -p ${PIDFILE} ${DAEMON} ${NAME}
+	status_of_proc -p "$PIDFILE" "$DAEMON" "$NAME"
 	;;
 
   *)
