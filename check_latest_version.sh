@@ -126,8 +126,9 @@ if [ -z "$own_current_release" ]; then
     echo "No local version found, treating as new release"
     op='newer'
 else
-    vercomp "$remote_current_release" "$own_current_release"
-    case $? in
+    rc=0
+    vercomp "$remote_current_release" "$own_current_release" || rc=$?
+    case $rc in
         0) op='equal' ;;
         1) op='newer' ;;
         2) op='older' ;;
