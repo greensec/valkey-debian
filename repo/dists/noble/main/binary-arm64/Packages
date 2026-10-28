@@ -1,19 +1,19 @@
 Package: valkey-sentinel
 Source: valkey
-Version: 9.1.2~noble
+Version: 9.1.3~noble
 Architecture: arm64
 Maintainer: Lucas Kanashiro <kanashiro@debian.org>
-Installed-Size: 80
+Installed-Size: 85
 Pre-Depends: init-system-helpers (>= 1.54~)
-Depends: valkey-tools (= 9.1.2~noble)
+Depends: valkey-tools (= 9.1.3~noble)
 Homepage: https://valkey.io
 Priority: optional
 Section: database
-Filename: pool/main/v/valkey/valkey-sentinel_9.1.2~noble_arm64.deb
-Size: 25634
-SHA256: 03a7289caca8f21572ab61a9afaf0362a8e93ef0adf7e75756ebcd494e456535
-SHA1: afa69ca5e78473d95dfaa7d0166fb81309d72cb3
-MD5sum: 9ca62d67028cce38551d1d63e7d12535
+Filename: pool/main/v/valkey/valkey-sentinel_9.1.3~noble_arm64.deb
+Size: 28866
+SHA256: f9d2ad1618c150d9b018f93f743cc84eca30528332462bccec7307cc9fd5117d
+SHA1: 59c2c3b90da59ce5283434563520efcf6652eaef
+MD5sum: a007cc02f56385c71b11d66ec4ff3e63
 Description: Persistent key-value database with network interface (monitoring)
  Valkey is a key-value database in a similar vein to memcache but the dataset
  is non-volatile. Valkey additionally provides native support for atomically
@@ -23,21 +23,21 @@ Description: Persistent key-value database with network interface (monitoring)
 
 Package: valkey-server
 Source: valkey
-Version: 9.1.2~noble
+Version: 9.1.3~noble
 Architecture: arm64
 Maintainer: Lucas Kanashiro <kanashiro@debian.org>
-Installed-Size: 197
+Installed-Size: 203
 Pre-Depends: init-system-helpers (>= 1.54~)
-Depends: valkey-tools (= 9.1.2~noble)
+Depends: valkey-tools (= 9.1.3~noble)
 Provides: valkey
 Homepage: https://valkey.io
 Priority: optional
 Section: database
-Filename: pool/main/v/valkey/valkey-server_9.1.2~noble_arm64.deb
-Size: 64084
-SHA256: d5654475410091e6a1e4a334e95a8bf879cd8419296bcffe130918b9de4e5330
-SHA1: 0e25bad796e78982759d1e8a6f69fd0a1b61f676
-MD5sum: 55402d0adff26685f0777fd2ad332d60
+Filename: pool/main/v/valkey/valkey-server_9.1.3~noble_arm64.deb
+Size: 67812
+SHA256: fc4a24a5bfaf1bc4f47133c9c228420e02b7134a8c1302ece516f7bfbfdde07d
+SHA1: f874727c0b0ac4a3b9761041d7026cb3ac2497da
+MD5sum: f18c450bdf7673c3f549aca26066a0e9
 Description: Persistent key-value database with network interface
  Valkey is a key-value database in a similar vein to memcache but the dataset
  is non-volatile. Valkey additionally provides native support for atomically
@@ -47,20 +47,20 @@ Description: Persistent key-value database with network interface
 
 Package: valkey-tools
 Source: valkey
-Version: 9.1.2~noble
+Version: 9.1.3~noble
 Architecture: arm64
 Maintainer: Lucas Kanashiro <kanashiro@debian.org>
-Installed-Size: 8125
-Depends: adduser, libatomic1 (>= 4.8), libc6 (>= 2.38), libjemalloc2 (>= 4.0.0), liblzf1 (>= 1.5), libssl3t64 (>= 3.0.0), libsystemd0
+Installed-Size: 8133
+Depends: systemd | systemd-standalone-sysusers | systemd-sysusers, libatomic1 (>= 4.8), libc6 (>= 2.38), libjemalloc2 (>= 4.0.0), liblzf1 (>= 1.5), libssl3t64 (>= 3.0.0), libsystemd0
 Suggests: ruby-redis
 Homepage: https://valkey.io
 Priority: optional
 Section: database
-Filename: pool/main/v/valkey/valkey-tools_9.1.2~noble_arm64.deb
-Size: 1459056
-SHA256: 5438be119552f4bc9578815cf3023bd900beec72cc6785fa1ac203ff91b7affa
-SHA1: 7144eb5182a669de167d1ec09220893733b38bac
-MD5sum: 910b8e5c2b8d02cad7cab487804c6fac
+Filename: pool/main/v/valkey/valkey-tools_9.1.3~noble_arm64.deb
+Size: 1464580
+SHA256: d1bcaafefb51fe5ff6d85aef79778c24deb4d62e6711708b208e4d5c4e52ee55
+SHA1: 613053ae2e3a16acb02964366229154ec403d4e0
+MD5sum: c92133bc13dd8c427329f74619e71ad3
 Description: Persistent key-value database with network interface (client)
  Valkey is a key-value database in a similar vein to memcache but the dataset
  is non-volatile. Valkey additionally provides native support for atomically
