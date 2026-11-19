@@ -1,19 +1,19 @@
 Package: valkey-sentinel
 Source: valkey
-Version: 9.1.3~bullseye1
+Version: 9.2.0~bullseye
 Architecture: amd64
 Maintainer: Lucas Kanashiro <kanashiro@debian.org>
-Installed-Size: 85
+Installed-Size: 95
 Pre-Depends: init-system-helpers (>= 1.54~)
-Depends: valkey-tools (= 9.1.3~bullseye1)
+Depends: valkey-tools (= 9.2.0~bullseye)
 Homepage: https://valkey.io
 Priority: optional
 Section: database
-Filename: pool/main/v/valkey/valkey-sentinel_9.1.3~bullseye1_amd64.deb
-Size: 28532
-SHA256: 5793cd6ab73c4bc7dacf607e44f2f656eb71afbe64044093e19383bcebf0fe3a
-SHA1: fbfafe542b3cc206fa4fcb698327ad4b9d06a8d7
-MD5sum: cf242a08978bf8365328bafe99818a3b
+Filename: pool/main/v/valkey/valkey-sentinel_9.2.0~bullseye_amd64.deb
+Size: 39500
+SHA256: 8c2025c17d923074a1f32d84c7b98f9623ee6728fb7eba362e1f4bf793899b1b
+SHA1: 5b210add868584d0eb5628feafa24b02905fb4cc
+MD5sum: a95393bff19132384e414d47917742e8
 Description: Persistent key-value database with network interface (monitoring)
  Valkey is a key-value database in a similar vein to memcache but the dataset
  is non-volatile. Valkey additionally provides native support for atomically
@@ -23,21 +23,21 @@ Description: Persistent key-value database with network interface (monitoring)
 
 Package: valkey-server
 Source: valkey
-Version: 9.1.3~bullseye1
+Version: 9.2.0~bullseye
 Architecture: amd64
 Maintainer: Lucas Kanashiro <kanashiro@debian.org>
-Installed-Size: 203
+Installed-Size: 227
 Pre-Depends: init-system-helpers (>= 1.54~)
-Depends: valkey-tools (= 9.1.3~bullseye1)
+Depends: valkey-tools (= 9.2.0~bullseye)
 Provides: valkey
 Homepage: https://valkey.io
 Priority: optional
 Section: database
-Filename: pool/main/v/valkey/valkey-server_9.1.3~bullseye1_amd64.deb
-Size: 66856
-SHA256: f14c7fb9b6a6c03ff96ddba9aa924f857493e02741d1aaeafb628e99972ecc29
-SHA1: b7968c9d2064b44abe49bee20a8ae5ad15e62364
-MD5sum: 8e13cbde449998d0039f2a3ae9ab861d
+Filename: pool/main/v/valkey/valkey-server_9.2.0~bullseye_amd64.deb
+Size: 82236
+SHA256: 2e0aec4b8245b0e79d1a6dcb2ed39dcd603cadc58bc8bb23fc33c5bcaf0269da
+SHA1: ba0344033ea3fe209eb0b9c6008a9d658b6f8775
+MD5sum: 175164dcefb35702a165b39459877791
 Description: Persistent key-value database with network interface
  Valkey is a key-value database in a similar vein to memcache but the dataset
  is non-volatile. Valkey additionally provides native support for atomically
@@ -47,20 +47,20 @@ Description: Persistent key-value database with network interface
 
 Package: valkey-tools
 Source: valkey
-Version: 9.1.3~bullseye1
+Version: 9.2.0~bullseye
 Architecture: amd64
 Maintainer: Lucas Kanashiro <kanashiro@debian.org>
-Installed-Size: 7697
-Depends: systemd | systemd-standalone-sysusers | systemd-sysusers, libatomic1 (>= 4.8), libc6 (>= 2.29), libjemalloc2 (>= 4.0.0), liblzf1 (>= 1.5), libssl1.1 (>= 1.1.1), libsystemd0
+Installed-Size: 11592
+Depends: systemd | systemd-standalone-sysusers | systemd-sysusers, libatomic1 (>= 4.8), libc6 (>= 2.29), liblzf1 (>= 1.5), libssl1.1 (>= 1.1.1), libsystemd0
 Suggests: ruby-redis
 Homepage: https://valkey.io
 Priority: optional
 Section: database
-Filename: pool/main/v/valkey/valkey-tools_9.1.3~bullseye1_amd64.deb
-Size: 1349060
-SHA256: 5823a9d9670488a5cad3bd27e2e879afe6d6306a7b433282cc922bffc2431da9
-SHA1: 25228f162beca47c64c3c3dee57d06b32296e78f
-MD5sum: 8171577defea7d8d3dde48be5a8b8bf7
+Filename: pool/main/v/valkey/valkey-tools_9.2.0~bullseye_amd64.deb
+Size: 1853148
+SHA256: 9902ed17cddcf2001232066837483442f13b2000d21c803bc7556733eccd504d
+SHA1: d0fa9a00fdaff006f88c6de93a8c82905a467347
+MD5sum: bd5809588c0f15347d688c723d706778
 Description: Persistent key-value database with network interface (client)
  Valkey is a key-value database in a similar vein to memcache but the dataset
  is non-volatile. Valkey additionally provides native support for atomically
