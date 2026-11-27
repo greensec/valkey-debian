@@ -2,44 +2,44 @@
 Hash: SHA512
 
 Codename: bookworm
-Date: Thu, 19 Nov 2026 22:54:51 UTC
+Date: Fri, 27 Nov 2026 00:16:27 UTC
 Architectures: amd64 arm64
 Components: main
 Description: greensec/valkey-debian
 MD5Sum:
- d0d6a83aaacf70f14be3b113dd4ff99d 2847 main/binary-amd64/Packages
- 7c93f98f1ebcfe876263f34594a86e24 1005 main/binary-amd64/Packages.gz
+ f5e14911223be223ddce0c906a566fda 2847 main/binary-amd64/Packages
+ 36edaa794a23b9cb1c6dfab4d854e402 1006 main/binary-amd64/Packages.gz
  af3ebcf028b6035cd44ba6a22a192cfe 72 main/binary-amd64/Release
- ff46a86324a8f76bd8b6eef9d91fe983 2847 main/binary-arm64/Packages
- 5d6383d9eeec5359c0c7b509c9057bac 1010 main/binary-arm64/Packages.gz
+ 69e5fe5ea805a446b47d1a8ecea2e362 2847 main/binary-arm64/Packages
+ de53055422316964f36d3f1d6df8dd84 1004 main/binary-arm64/Packages.gz
  f09eccc20e68b9e2d83d33a82fb1515f 72 main/binary-arm64/Release
 SHA1:
- 655f76b941c2dceed6fa9cf487fa178fa66aaa08 2847 main/binary-amd64/Packages
- 4abccdf4910417f4e49a2adb21fec229513d054e 1005 main/binary-amd64/Packages.gz
+ fc27dc8c877adc7b746bf2b802652e09f52b0c4b 2847 main/binary-amd64/Packages
+ f47db4e3322aeeacd84cf348586e1475bcabdfc9 1006 main/binary-amd64/Packages.gz
  1fc3a99e1488fcf968cde4c73befbfcadab39a2e 72 main/binary-amd64/Release
- 72b02101267efe1f3e6dcaeb850afe2588dbc0e9 2847 main/binary-arm64/Packages
- 86fad8b7e00fa7bfeed331def5f69e1e5b0ab1ab 1010 main/binary-arm64/Packages.gz
+ 987c8d1ac212d7ca35b1c495f21fea692a4f7927 2847 main/binary-arm64/Packages
+ 27e0c70bbd27b1fe5c0d3b72ffd0744d4abd872a 1004 main/binary-arm64/Packages.gz
  88798d0e39aa69b7e24a89471fb5d3306cd5b102 72 main/binary-arm64/Release
 SHA256:
- 19570a76f8c2c46cec75e447d179e8633a5a4c212d8853409840494d7e6e47ac 2847 main/binary-amd64/Packages
- 8c44ceecb4af88713215bb5870301a43f7db418fb6feda1fb0b18afcfc1708b6 1005 main/binary-amd64/Packages.gz
+ c395dd121b1c6d36179385e7e54f810a7d072f84a5b6c105949d79e2baf4408d 2847 main/binary-amd64/Packages
+ 6fb46c197262c8ae4928102027baf3de86919c2cbd217acce5cd600765368a48 1006 main/binary-amd64/Packages.gz
  411c06bae38c967a3699cf6e9d95619e2e528f8f1c71d001944abf7013c3a179 72 main/binary-amd64/Release
- a13e305c999cf2a814b208682a81d2f3c9cd030695aecb405d6cb867ce024cd8 2847 main/binary-arm64/Packages
- e8a99850e23ae78527d81b37eb3472d94f2acd07ea42750e9c76e43ca5d8a424 1010 main/binary-arm64/Packages.gz
+ a83874c692b0bfaa1d3c2d57ee3adb01a30c4eb94c1bd97fc6579929990e9a96 2847 main/binary-arm64/Packages
+ 2174310374c9730febd528f3579325e7daece26b34fff24d162b0232cde49191 1004 main/binary-arm64/Packages.gz
  1f38aeb335f7350323911aab026b0ed9d9d295cd0c42b2be7401fe93d88ba7aa 72 main/binary-arm64/Release
 -----BEGIN PGP SIGNATURE-----
 
-iQIzBAEBCgAdFiEEga/Afm0npMGA3feNyyUWHVEdjYQFAmr/fjsACgkQyyUWHVEd
-jYRxGQ//ccn4vSZDhKw1nWNttPMw8QtFMzlcFUlQME6WcCribbqVwcwr+QerUU5d
-u9fdoTaFT2TPB0o9WWDLJL54d3skqemLbj4msLYabtfo8tfMKnBiYKHkUv1jeyP5
-MYvpDvJmDL+gL2WLHivCAKgOxSpcnG+RY0WSxmseyelMyIvJ95rzW8oRN6hGpyel
-zOkXQE8Gp6WL/FxoyXPE3/a77Nuq2gFxfik1iX0oaQxbT/BcF6ulQhHL+TuD8J95
-T/NUSeHBTE1gmJqz+yf5X06+R9K2FHcZcV6RYTO4m8RkI+uCvtzWuQhg/NlkdEc9
-+/IiVbMLhT/++/3cCEnbL8hg8Y5Jm8Dti/pXcddagsD09wwgiGYW+GNEs6FLmd86
-i9aFUYCB58XDOkgdiSllr3MiE2MrvuK0deR+5/XU3lIVIkPB9pdZW8W9sjAMRugz
-56cGnMxBvfOydg71JOgmYrWAfdG7loW/rZXm4nPu/NMdk7dyZ6XVbb/bNZ1rSJpq
-4KsuRC3jjVfQETmf6cx0FHgDDwxKO8KKUl8LeanTMnCzrM4Xdru/+AsXDBSwXCGV
-4N0XRqlqwf62RpWmoa6KEo/5I3wGddfC2CX0eL8LB4X9yvhFuoUlvHi6RjXSZoTv
-jkwdK4FjECtqSu18gtHiBaY7Cp1hJKdTHQSV/D9a7WFpCtWlaWY=
-=qlhi
+iQIzBAEBCgAdFiEEga/Afm0npMGA3feNyyUWHVEdjYQFAmsIy9sACgkQyyUWHVEd
+jYR4dQ//f6SupC9e6gkPpnmf3qHtjuQJeL1e6vWs5LYFGN5nbCrPx+dpJU56+8vT
+QqyHrLjwaxddSncB9gmM14fdaBrwpXbLAr1lt1vrjKhUMpT2Bhwo50OxdfKtIMBL
+hHGzcazbZ9ykFa4/wXONFqJWnVnRjs1P3ouZ6yEmK1iOElgOuWorPFResy5ZnWDY
+f2v3Qz1XWMRHlVE3kJYVWLtWqPSsZNT0cgmpgf6efw6QdBPKR0KrIVuGexSK6pDB
+RRlVUQURrKpbL/zoGbKB3ZCsaAppaoZ+GMwdZ7CGVWGyDiwmge6Zvb+vnv/KKhhZ
+HLD7nkKJUexgJdPMKaGUImF+ouZb/SlwWza/U2bvG5qCC/HBc82GdKgrV47XS6g9
+o/FJJO0Tev12BNMKe3eNX3YeWXKIIV0xPA7XnNYJlFtlpzZdRkEiyjqfvQfRR3wB
+Q60RqmcT6paNCyTFjCuZXjeOM/vMq4KVD2Riv/9i519qWf1cwQrEujrT/spzTOMd
+mJfWhWMbgPB3wSQYXUS0cbFGNZnEBj0vbihNo6ztZKCcB61aHQE19nHu7rSqdmUP
+PFRUnKSsh18tlJHS+9w9zMzLodK9kFgYRTuMMZgpd/fzDrA+E6eBgWQhj3OrKRRh
+G2B+9/GLz7p0tM2mS+pEEgwA4rQFUVaAr0kDxXJ18tRFngqHusU=
+=8xj4
 -----END PGP SIGNATURE-----
